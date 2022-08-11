@@ -1,0 +1,20 @@
+﻿{
+	"Nodes": [
+		{
+			"NodeId": 0,
+			"NodeType": 0
+		},
+		{
+			"NodeId": 1,
+			"NodeType": " "
+		},
+		{
+			"NodeId": 2,
+			"NodeType": "road"
+		}
+	],
+	"Routes": [
+		[ 1, 2 ],
+		[ 2, 3 ]
+	]
+}
