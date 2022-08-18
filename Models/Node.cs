@@ -15,8 +15,8 @@ namespace DynamicSimulationConsole.Models
     [System.Serializable]
     public class Node
     {
-        public int NodeId; // GUID
-        public NodeType NodeType;
-
+        public int NodeId { get; set; } // GUID
+        public NodeType NodeType { get; set; }
+        public NodeCoordinate Coordinate { get; set; }
     }
 }

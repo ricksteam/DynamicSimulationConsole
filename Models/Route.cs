@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace DynamicSimulationConsole.Models
 {
+    [System.Serializable]
     public class Route
     {
-        public Tuple<int, int> NodeConnection;
+        public Tuple<int, int> NodeConnection { get; set; }
     }
 }
