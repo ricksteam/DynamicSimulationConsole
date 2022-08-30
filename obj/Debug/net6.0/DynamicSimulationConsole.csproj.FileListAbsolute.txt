@@ -36,3 +36,26 @@ F:\Graduate Research\DynamicSimulationConsole\obj\Debug\net6.0\DynamicSimulation
 F:\Graduate Research\DynamicSimulationConsole\obj\Debug\net6.0\DynamicSimulationConsole.genruntimeconfig.cache
 F:\Graduate Research\DynamicSimulationConsole\obj\Debug\net6.0\ref\DynamicSimulationConsole.dll
 F:\Graduate Research\DynamicSimulationConsole\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Cyber\Documents\GitHub\DynamicSimulationConsole\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\Cyber\Documents\GitHub\DynamicSimulationConsole\bin\Debug\net6.0\appsettings.json
+C:\Users\Cyber\Documents\GitHub\DynamicSimulationConsole\bin\Debug\net6.0\DynamicSimulationConsole.exe
+C:\Users\Cyber\Documents\GitHub\DynamicSimulationConsole\bin\Debug\net6.0\DynamicSimulationConsole.deps.json
+C:\Users\Cyber\Documents\GitHub\DynamicSimulationConsole\bin\Debug\net6.0\DynamicSimulationConsole.runtimeconfig.json
+C:\Users\Cyber\Documents\GitHub\DynamicSimulationConsole\bin\Debug\net6.0\DynamicSimulationConsole.dll
+C:\Users\Cyber\Documents\GitHub\DynamicSimulationConsole\bin\Debug\net6.0\DynamicSimulationConsole.pdb
+C:\Users\Cyber\Documents\GitHub\DynamicSimulationConsole\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\Cyber\Documents\GitHub\DynamicSimulationConsole\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Cyber\Documents\GitHub\DynamicSimulationConsole\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Cyber\Documents\GitHub\DynamicSimulationConsole\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Cyber\Documents\GitHub\DynamicSimulationConsole\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Cyber\Documents\GitHub\DynamicSimulationConsole\obj\Debug\net6.0\DynamicSimulationConsole.csproj.AssemblyReference.cache
+C:\Users\Cyber\Documents\GitHub\DynamicSimulationConsole\obj\Debug\net6.0\DynamicSimulationConsole.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Cyber\Documents\GitHub\DynamicSimulationConsole\obj\Debug\net6.0\DynamicSimulationConsole.AssemblyInfoInputs.cache
+C:\Users\Cyber\Documents\GitHub\DynamicSimulationConsole\obj\Debug\net6.0\DynamicSimulationConsole.AssemblyInfo.cs
+C:\Users\Cyber\Documents\GitHub\DynamicSimulationConsole\obj\Debug\net6.0\DynamicSimulationConsole.csproj.CoreCompileInputs.cache
+C:\Users\Cyber\Documents\GitHub\DynamicSimulationConsole\obj\Debug\net6.0\DynamicSimulationConsole.csproj.CopyComplete
+C:\Users\Cyber\Documents\GitHub\DynamicSimulationConsole\obj\Debug\net6.0\DynamicSimulationConsole.dll
+C:\Users\Cyber\Documents\GitHub\DynamicSimulationConsole\obj\Debug\net6.0\refint\DynamicSimulationConsole.dll
+C:\Users\Cyber\Documents\GitHub\DynamicSimulationConsole\obj\Debug\net6.0\DynamicSimulationConsole.pdb
+C:\Users\Cyber\Documents\GitHub\DynamicSimulationConsole\obj\Debug\net6.0\DynamicSimulationConsole.genruntimeconfig.cache
+C:\Users\Cyber\Documents\GitHub\DynamicSimulationConsole\obj\Debug\net6.0\ref\DynamicSimulationConsole.dll

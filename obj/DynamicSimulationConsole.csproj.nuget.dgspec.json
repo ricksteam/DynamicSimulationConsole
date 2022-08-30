@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Graduate Research\\DynamicSimulationConsole\\DynamicSimulationConsole.csproj": {}
+    "C:\\Users\\Cyber\\Documents\\GitHub\\DynamicSimulationConsole\\DynamicSimulationConsole.csproj": {}
   },
   "projects": {
-    "F:\\Graduate Research\\DynamicSimulationConsole\\DynamicSimulationConsole.csproj": {
+    "C:\\Users\\Cyber\\Documents\\GitHub\\DynamicSimulationConsole\\DynamicSimulationConsole.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Graduate Research\\DynamicSimulationConsole\\DynamicSimulationConsole.csproj",
+        "projectUniqueName": "C:\\Users\\Cyber\\Documents\\GitHub\\DynamicSimulationConsole\\DynamicSimulationConsole.csproj",
         "projectName": "DynamicSimulationConsole",
-        "projectPath": "F:\\Graduate Research\\DynamicSimulationConsole\\DynamicSimulationConsole.csproj",
-        "packagesPath": "C:\\Users\\blacy\\.nuget\\packages\\",
-        "outputPath": "F:\\Graduate Research\\DynamicSimulationConsole\\obj\\",
+        "projectPath": "C:\\Users\\Cyber\\Documents\\GitHub\\DynamicSimulationConsole\\DynamicSimulationConsole.csproj",
+        "packagesPath": "C:\\Users\\Cyber\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Cyber\\Documents\\GitHub\\DynamicSimulationConsole\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\blacy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Cyber\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

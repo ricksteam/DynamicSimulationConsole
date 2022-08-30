@@ -11,7 +11,7 @@ namespace DynamicSimulationConsole.Controllers
     public class SimulationController : ControllerBase
     {
         private readonly ILogger<SimulationController> _logger;
-        private Graph _g;
+        private static Graph s_graph;
         public SimulationController(ILogger<SimulationController> logger)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
@@ -24,35 +24,29 @@ namespace DynamicSimulationConsole.Controllers
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
-            var str = "";
-            
-            for (var i = 0; i < input.Nodes.Length - 1; i++)
-            {
-                var node = input.Nodes[i];
-                var nodeN = input.Nodes[i + 1];
+            s_graph = new Graph(input);
 
-                var dist1 = node.Coordinate.DistanceTo(nodeN.Coordinate);
-
-                str += $"Dist from node {i + 1} to node {i + 2} = {dist1}\n";
-            }
-
-            _g = new Graph(input);
-            
-            //var testA = input.Nodes[0];
-            //var testB = input.Nodes[1];
-
-            //var nodeCoord1 = testA.Coordinate;
-            //var nodeCoord2 = testB.Coordinate;
-
-            //var dist = nodeCoord1.DistanceFrom(nodeCoord2);
-            return Ok(str);
+            return Ok();
         }
 
         [HttpGet]
-        public IActionResult GetNode([FromQuery] int id)
+        public IActionResult GetShortestPath([FromQuery] int startId, [FromQuery] int endId)
         {
-            var node = _g.GetNodeById(1);
-            return Ok(JsonConvert.SerializeObject(node));
+            var shortestPath = s_graph.GetShortestPath(startId, endId);
+            var str = "";
+            foreach(var node in shortestPath)
+            {
+                str += $"Node {node.NodeId}\n";
+            }
+            for (int i = 0; i < shortestPath.Count - 1; i++)
+            {
+                var node = shortestPath[i];
+                var nodeNext = shortestPath[i + 1];
+
+                var dist = node.Coordinate.DistanceTo(nodeNext.Coordinate);
+                //str += $
+            }
+            return Ok(str);
         }
     }
 }
