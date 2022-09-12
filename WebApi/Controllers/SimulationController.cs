@@ -1,9 +1,7 @@
 using DynamicSimulationConsole.RoadGraph;
-using DynamicSimulationConsole.Shared.Models;
+using DynamicSimulationConsole.RoadGraph.Repositories;
 using DynamicSimulationConsole.WebApi.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
 
 namespace DynamicSimulationConsole.WebApi
 {
@@ -12,41 +10,49 @@ namespace DynamicSimulationConsole.WebApi
     public class SimulationController : ControllerBase
     {
         private readonly ILogger<SimulationController> _logger;
-        private static Graph s_graph;
-        public SimulationController(ILogger<SimulationController> logger)
+        private readonly IRoadGraphRepository _repository;
+        
+        public SimulationController(ILogger<SimulationController> logger, IRoadGraphRepository repository)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            _repository = repository ?? throw new ArgumentNullException(nameof(repository));
         }
 
-     
-
-        [HttpPost(Name = "NewSimulation")]
-        public IActionResult NewSimulation([FromBody] SimulationInput input)
+        
+        [HttpPost("StartSimulation")]
+        public IActionResult StartSimulation([FromBody] SimulationInput input)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
-
-            s_graph = new Graph(input.Nodes, input.Routes);
-
-            return Ok();
+            
+            _logger.Log(LogLevel.Information, $"[POST]: Simulation/StartSimulation");
+            var newGraph = new Graph(input.nodes, input.routes);
+            var guid = _repository.AddGraph(newGraph);
+            return Ok(guid);
+        }
+        
+        [HttpDelete("StopSimulation")]
+        public IActionResult StopSimulation([FromBody] Guid id)
+        {
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+            
+            _logger.Log(LogLevel.Information, $"[DELETE]: Simulation/StopSimulation");
+            var deleted = _repository.TryDeleteGraphById(id);
+            return Ok(deleted);
         }
 
-        [HttpGet]
-        public IActionResult GetShortestPath([FromQuery] int startId, [FromQuery] int endId)
+        [HttpGet("ShortestPath")]
+        public IActionResult GetShortestPath([FromQuery] string id, [FromQuery] int startId, [FromQuery] int endId)
         {
-            var shortestPath = s_graph.GetShortestPath(startId, endId);
+            _logger.Log(LogLevel.Information, $"[GET]: Simulation/ShortestPath");
+            if (!_repository.TryGetGraphById(new Guid(id), out var graph)) return NotFound("ID not found in repository");
+
+            var shortestPath = graph.GetShortestPath(startId, endId);
             var str = "";
             foreach(var node in shortestPath)
             {
-                str += $"Node {node.NodeId}\n";
+                str += $"Node {node.nodeId}\n";
             }
-            for (int i = 0; i < shortestPath.Count - 1; i++)
-            {
-                var node = shortestPath[i];
-                var nodeNext = shortestPath[i + 1];
-
-                var dist = node.Coordinate.DistanceTo(nodeNext.Coordinate);
-                //str += $
-            }
+            
             return Ok(str);
         }
     }

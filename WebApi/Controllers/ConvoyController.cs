@@ -1,9 +1,6 @@
-using DynamicSimulationConsole.RoadGraph;
-using DynamicSimulationConsole.Shared.Models;
 using DynamicSimulationConsole.WebApi.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
+
 
 namespace DynamicSimulationConsole.WebApi
 {
@@ -18,10 +15,11 @@ namespace DynamicSimulationConsole.WebApi
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
  
-        [HttpPost(Name = "NewConvoy")]
+        [HttpPost("NewConvoy")]
         public IActionResult NewConvoy([FromBody] ConvoyInput input)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
+            _logger.Log(LogLevel.Information, $"[POST]: NewConvoy");
             
             return Ok();
         }

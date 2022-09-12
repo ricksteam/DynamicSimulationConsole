@@ -4,12 +4,9 @@ namespace DynamicSimulationConsole.RoadGraph
 {
     public class Graph
     {
-        private List<PathNode> _nodes;
-        private List<Tuple<int, int>> _routes;
-
-        private List<PathNode> _openList;
-        private List<PathNode> _closedList;
-
+        private readonly List<PathNode> _nodes;
+        private readonly List<Tuple<int, int>> _routes;
+        
         public Graph(Node[] nodes, Tuple<int, int>[] routes)
         {
             _nodes = new List<PathNode>(GetPathNodes(nodes));  
@@ -19,21 +16,24 @@ namespace DynamicSimulationConsole.RoadGraph
         private PathNode[] GetPathNodes(Node[] nodes)
         {
             return nodes.Select((node) => new PathNode(node)).ToArray();
-        } 
-        public List<Node> GetNodesByType(NodeType type)
+        }
+
+        private List<Node> GetNodesByType(NodeType type)
         {
-            return _nodes.Where(x => x.NodeType == type).ToList<Node>();
+            return _nodes.Where(x => x.nodeType == type).ToList<Node>();
         }
         public bool TryGetNodesByType(NodeType type, out List<Node> nodes)
         {
             nodes = GetNodesByType(type);
             return nodes != null;
         }
-        public PathNode GetNodeById(int id)
+
+        private PathNode GetNodeById(int id)
         {
-            return _nodes.FirstOrDefault(x => x.NodeId == id);
-        } 
-        public bool TryGetNodeById(int id, out Node node)
+            return _nodes.FirstOrDefault(x => x.nodeId == id);
+        }
+
+        private bool TryGetNodeById(int id, out Node node)
         {
             node = GetNodeById(id);
             return node != null;
@@ -43,7 +43,7 @@ namespace DynamicSimulationConsole.RoadGraph
             return _routes.Where(x => x.Item1 == id || x.Item2 == id).ToList();
         }
 
-        public List<PathNode> GetAllNodesConnectedTo(int nodeId)
+        private List<PathNode> GetAllNodesConnectedTo(int nodeId)
         {
             var routes = _routes.Where(x => x.Item1 == nodeId).ToList();
             return routes.Select(route => GetNodeById(route.Item2)).ToList();   
@@ -51,8 +51,8 @@ namespace DynamicSimulationConsole.RoadGraph
 
         public List<PathNode> GetShortestPath(int nodeIdStart, int nodeIdEnd)
         {
-            _openList = new List<PathNode>();
-            _closedList = new List<PathNode>();
+            var _openList = new List<PathNode>();
+            var _closedList = new List<PathNode>();
 
             
             if (TryGetNodeById(nodeIdStart, out var nodeStart) && TryGetNodeById (nodeIdEnd, out var nodeEnd))
@@ -62,7 +62,7 @@ namespace DynamicSimulationConsole.RoadGraph
 
                 _openList.Add(pathNodeStart);
 
-                foreach (PathNode node in _nodes)
+                foreach (var node in _nodes)
                 {
                     node.gCost = int.MaxValue;
                     node.CalculateFCost();
@@ -70,28 +70,28 @@ namespace DynamicSimulationConsole.RoadGraph
                 }
 
                 pathNodeStart.gCost = 0;
-                pathNodeStart.hCost = pathNodeStart.Coordinate.DistanceTo(pathNodeEnd.Coordinate);
+                pathNodeStart.hCost = pathNodeStart.coordinate.DistanceTo(pathNodeEnd.coordinate);
                 pathNodeStart.CalculateFCost();
 
                 while(_openList.Count > 0)
                 {
                     var currentNode = GetLowestFCostNode(_openList);
                     var newEnd = GetNodeById(nodeIdEnd);
-                    if (currentNode.NodeId == pathNodeEnd.NodeId) return CalculatePath(newEnd);
+                    if (currentNode.nodeId == pathNodeEnd.nodeId) return CalculatePath(newEnd);
                     _openList.Remove(currentNode);
                     _closedList.Add(currentNode);
 
-                    foreach(var neighbourNode in GetAllNodesConnectedTo(currentNode.NodeId))
+                    foreach(var neighbourNode in GetAllNodesConnectedTo(currentNode.nodeId))
                     {
                         if (neighbourNode.obstructed) continue;
                         if (_closedList.Contains(neighbourNode)) continue;
 
-                        var tentativeGCost = currentNode.gCost + currentNode.Coordinate.DistanceTo(neighbourNode.Coordinate);
+                        var tentativeGCost = currentNode.gCost + currentNode.coordinate.DistanceTo(neighbourNode.coordinate);
                         if (tentativeGCost < neighbourNode.gCost)
                         {
                             neighbourNode.previousNode = currentNode;
                             neighbourNode.gCost = tentativeGCost;
-                            neighbourNode.hCost = neighbourNode.Coordinate.DistanceTo(pathNodeEnd.Coordinate);
+                            neighbourNode.hCost = neighbourNode.coordinate.DistanceTo(pathNodeEnd.coordinate);
                             neighbourNode.CalculateFCost();
 
                             if (!_openList.Contains(neighbourNode))
@@ -111,8 +111,7 @@ namespace DynamicSimulationConsole.RoadGraph
         
         private List<PathNode> CalculatePath(PathNode endNode)
         {
-            var path = new List<PathNode>();
-            path.Add(endNode);
+            var path = new List<PathNode> { endNode };
             var currentNode = endNode;
 
             while(currentNode.previousNode != null)
@@ -140,7 +139,7 @@ namespace DynamicSimulationConsole.RoadGraph
         {
             if (TryGetNodeById(nodeId1, out var node1) && TryGetNodeById(nodeId2, out var node2))
             {
-                return node1.Coordinate.DistanceTo(node2.Coordinate);
+                return node1.coordinate.DistanceTo(node2.coordinate);
             }
 
             return -1;

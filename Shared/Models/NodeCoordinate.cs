@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace DynamicSimulationConsole.Shared.Models
 {
     public enum UnitOfLength
@@ -12,24 +6,24 @@ namespace DynamicSimulationConsole.Shared.Models
         Miles,
         Kilometers
     }
-
-    [System.Serializable]
+    
+    [Serializable]
     public struct NodeCoordinate
     {
-
-        public double Lat { get; set; }
-        public double Lon { get; set; }
+        private const double EPSILON = 0.00001;
+        public double latitude { get; set; }
+        public double longitude { get; set; }
 
         public NodeCoordinate() : this(0, 0) { }
         public NodeCoordinate(double lat, double lon)
         {
-            Lat = lat;
-            Lon = lon;
+            latitude = lat;
+            longitude = lon;
         }
 
         public static bool operator ==(NodeCoordinate a, NodeCoordinate b)
         {
-            return a.Lat == b.Lat && a.Lon == b.Lon;
+            return Math.Abs(a.latitude - b.latitude) < EPSILON && Math.Abs(a.longitude - b.longitude) < EPSILON;
         }
 
         public static bool operator !=(NodeCoordinate a, NodeCoordinate b)
@@ -39,17 +33,17 @@ namespace DynamicSimulationConsole.Shared.Models
 
         public override bool Equals(object obj)
         {
-            return this == (NodeCoordinate)obj;
+            return obj != null && this == (NodeCoordinate)obj;
         }
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(Lat, Lon);
+            return HashCode.Combine(latitude, longitude);
         }
 
         public override string ToString()
         {
-            return $"Latitude: {Lat} | Longitude: {Lon}";
+            return $"Latitude: {latitude} | Longitude: {longitude}";
         }
 
     }
@@ -60,13 +54,12 @@ namespace DynamicSimulationConsole.Shared.Models
         public static double DistanceTo(this NodeCoordinate from, NodeCoordinate to, UnitOfLength uol = UnitOfLength.Kilometers) => GetDistance(from, to, uol);
         public static double DistanceFrom(this NodeCoordinate to, NodeCoordinate from, UnitOfLength uol = UnitOfLength.Kilometers) => GetDistance(to, from, uol);
 
-
         private static double GetDistance(NodeCoordinate a, NodeCoordinate b, UnitOfLength uol)
         {
-            var rLat1 = Math.PI * a.Lat / 180;
-            var rLat2 = Math.PI * b.Lat / 180;
+            var rLat1 = Math.PI * a.latitude / 180;
+            var rLat2 = Math.PI * b.latitude / 180;
 
-            var theta = a.Lon - b.Lon;
+            var theta = a.longitude - b.longitude;
             var rTheta = Math.PI * theta / 180;
 
             var dist = Math.Sin(rLat1) * Math.Sin(rLat2) + Math.Cos(rLat1) * Math.Cos(rLat2) * Math.Cos(rTheta);

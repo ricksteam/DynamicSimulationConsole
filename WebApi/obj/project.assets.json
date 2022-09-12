@@ -283,19 +283,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Cyber\\.nuget\\packages\\": {}
+    "C:\\Users\\brandon.lacy\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Cyber\\Documents\\GitHub\\DynamicSimulationConsole\\WebApi\\WebApi.csproj",
+      "projectUniqueName": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\WebApi\\WebApi.csproj",
       "projectName": "WebApi",
-      "projectPath": "C:\\Users\\Cyber\\Documents\\GitHub\\DynamicSimulationConsole\\WebApi\\WebApi.csproj",
-      "packagesPath": "C:\\Users\\Cyber\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Cyber\\Documents\\GitHub\\DynamicSimulationConsole\\WebApi\\obj\\",
+      "projectPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\WebApi\\WebApi.csproj",
+      "packagesPath": "C:\\Users\\brandon.lacy\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Cyber\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\brandon.lacy\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -309,11 +309,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Cyber\\Documents\\GitHub\\DynamicSimulationConsole\\RoadGraph\\RoadGraph.csproj": {
-              "projectPath": "C:\\Users\\Cyber\\Documents\\GitHub\\DynamicSimulationConsole\\RoadGraph\\RoadGraph.csproj"
+            "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\RoadGraph\\RoadGraph.csproj": {
+              "projectPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\RoadGraph\\RoadGraph.csproj"
             },
-            "C:\\Users\\Cyber\\Documents\\GitHub\\DynamicSimulationConsole\\Shared\\Shared.csproj": {
-              "projectPath": "C:\\Users\\Cyber\\Documents\\GitHub\\DynamicSimulationConsole\\Shared\\Shared.csproj"
+            "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Shared\\Shared.csproj": {
+              "projectPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Shared\\Shared.csproj"
             }
           }
         }

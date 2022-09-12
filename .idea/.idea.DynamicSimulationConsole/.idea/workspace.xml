@@ -9,7 +9,60 @@
     <projectFile profileName="WebApplication1">WebApplication1/WebApplication1.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a5c7b899-b95d-4dc6-8235-6753be685e3a" name="Changes" comment="" />
+    <list default="true" id="a5c7b899-b95d-4dc6-8235-6753be685e3a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/RoadGraph/Convoy.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RoadGraph/Repositories/InMemoryRoadGraphRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RoadGraph/Repositories/Interfaces/IRoadGraphRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DynamicSimulationConsole/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DynamicSimulationConsole/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RoadGraph/Graph.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RoadGraph/Graph.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RoadGraph/RoadGraph.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/RoadGraph/RoadGraph.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RoadGraph/obj/Debug/net6.0/RoadGraph.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/RoadGraph/obj/Debug/net6.0/RoadGraph.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RoadGraph/obj/Debug/net6.0/RoadGraph.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/RoadGraph/obj/Debug/net6.0/RoadGraph.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RoadGraph/obj/Debug/net6.0/RoadGraph.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/RoadGraph/obj/Debug/net6.0/RoadGraph.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RoadGraph/obj/RoadGraph.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/RoadGraph/obj/RoadGraph.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RoadGraph/obj/RoadGraph.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/RoadGraph/obj/RoadGraph.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RoadGraph/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/RoadGraph/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RoadGraph/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/RoadGraph/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RoadGraph/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/RoadGraph/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RoadGraph/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/RoadGraph/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/Models/Node.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/Models/Node.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/Models/NodeCoordinate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/Models/NodeCoordinate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/Models/PathNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/Models/PathNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/Models/Route.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/Models/Route.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/Shared.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/Shared.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/obj/Debug/net6.0/Shared.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/Debug/net6.0/Shared.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/obj/Debug/net6.0/Shared.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/Debug/net6.0/Shared.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/obj/Shared.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/Shared.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/obj/Shared.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/Shared.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visualization/Visualization.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Visualization/Visualization.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visualization/obj/Debug/net6.0/Visualization.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Visualization/obj/Debug/net6.0/Visualization.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visualization/obj/Debug/net6.0/Visualization.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Visualization/obj/Debug/net6.0/Visualization.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visualization/obj/Visualization.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Visualization/obj/Visualization.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visualization/obj/Visualization.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Visualization/obj/Visualization.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visualization/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Visualization/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visualization/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Visualization/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visualization/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Visualization/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visualization/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Visualization/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Controllers/ConvoyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/Controllers/ConvoyController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Controllers/SimulationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/Controllers/SimulationController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Models/ConvoyInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/Models/ConvoyInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Models/SimulationInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/Models/SimulationInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/WebApi.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/WebApi.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/obj/Debug/net6.0/WebApi.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/obj/Debug/net6.0/WebApi.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/obj/Debug/net6.0/WebApi.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/obj/Debug/net6.0/WebApi.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/obj/Debug/net6.0/WebApi.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/obj/Debug/net6.0/WebApi.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/obj/WebApi.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/obj/WebApi.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/obj/WebApi.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/obj/WebApi.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/obj/rider.project.restore.info" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,20 +75,22 @@
     <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2EP5YpgBaoP0diAnqT060bkyto2" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.DynamicSimulationConsole">
+}</component>
+  <component name="RunManager" selected=".NET Launch Settings Profile.WebApi">
     <configuration name="DynamicSimulationConsole" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/DynamicSimulationConsole.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net6.0" />
@@ -136,6 +191,7 @@
       <option name="presentableId" value="Default" />
       <updated>1662484436667</updated>
       <workItem from="1662484453240" duration="3075000" />
+      <workItem from="1663010024350" duration="6048000" />
     </task>
     <servers />
   </component>
@@ -157,5 +213,37 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/RoadGraph/Repositories/InMemoryRoadGraphRepository.cs</url>
+          <line>15</line>
+          <properties documentPath="C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\RoadGraph\Repositories\InMemoryRoadGraphRepository.cs" initialLine="15" containingFunctionPresentation="method 'TryGetGraphById'">
+            <startOffsets>
+              <option value="421" />
+            </startOffsets>
+            <endOffsets>
+              <option value="463" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/RoadGraph/Repositories/InMemoryRoadGraphRepository.cs</url>
+          <line>22</line>
+          <properties documentPath="C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\RoadGraph\Repositories\InMemoryRoadGraphRepository.cs" initialLine="22" containingFunctionPresentation="method 'AddGraph'">
+            <startOffsets>
+              <option value="592" />
+            </startOffsets>
+            <endOffsets>
+              <option value="602" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

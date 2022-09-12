@@ -1,0 +1,15 @@
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\RoadGraph\bin\Debug\net6.0\RoadGraph.deps.json
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\RoadGraph\bin\Debug\net6.0\RoadGraph.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\RoadGraph\bin\Debug\net6.0\RoadGraph.pdb
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\RoadGraph\bin\Debug\net6.0\Shared.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\RoadGraph\bin\Debug\net6.0\Shared.pdb
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\RoadGraph\obj\Debug\net6.0\RoadGraph.csproj.AssemblyReference.cache
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\RoadGraph\obj\Debug\net6.0\RoadGraph.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\RoadGraph\obj\Debug\net6.0\RoadGraph.AssemblyInfoInputs.cache
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\RoadGraph\obj\Debug\net6.0\RoadGraph.AssemblyInfo.cs
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\RoadGraph\obj\Debug\net6.0\RoadGraph.csproj.CoreCompileInputs.cache
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\RoadGraph\obj\Debug\net6.0\RoadGraph.csproj.CopyComplete
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\RoadGraph\obj\Debug\net6.0\RoadGraph.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\RoadGraph\obj\Debug\net6.0\refint\RoadGraph.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\RoadGraph\obj\Debug\net6.0\RoadGraph.pdb
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\RoadGraph\obj\Debug\net6.0\ref\RoadGraph.dll

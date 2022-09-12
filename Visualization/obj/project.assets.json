@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Cyber\\.nuget\\packages\\": {}
+    "C:\\Users\\brandon.lacy\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Cyber\\Documents\\GitHub\\DynamicSimulationConsole\\Visualization\\Visualization.csproj",
+      "projectUniqueName": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Visualization\\Visualization.csproj",
       "projectName": "Visualization",
-      "projectPath": "C:\\Users\\Cyber\\Documents\\GitHub\\DynamicSimulationConsole\\Visualization\\Visualization.csproj",
-      "packagesPath": "C:\\Users\\Cyber\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Cyber\\Documents\\GitHub\\DynamicSimulationConsole\\Visualization\\obj\\",
+      "projectPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Visualization\\Visualization.csproj",
+      "packagesPath": "C:\\Users\\brandon.lacy\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Visualization\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Cyber\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\brandon.lacy\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

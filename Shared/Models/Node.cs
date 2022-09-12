@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace DynamicSimulationConsole.Shared.Models
 {
     public enum NodeType
@@ -12,13 +7,13 @@ namespace DynamicSimulationConsole.Shared.Models
         Bridge = 1
     }
 
-    [System.Serializable]
+    [Serializable]
     public class Node
     {
-        public int NodeId { get; set; } // GUID
-        public NodeType NodeType { get; set; }
-        public NodeCoordinate Coordinate { get; set; }
+        public int nodeId { get; set; } // GUID
+        public NodeType nodeType { get; set; }
+        public NodeCoordinate coordinate { get; set; }
         
-        public bool? OneWay { get; set; }
+        public bool oneWay { get; set; }
     }
 }

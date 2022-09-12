@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DynamicSimulationConsole.Shared.Models
+﻿namespace DynamicSimulationConsole.Shared.Models
 {
-    [System.Serializable]
+    [Serializable]
     public class Route
     {
-        public Tuple<int, int> NodeConnection { get; set; }
+        public Tuple<int, int> nodeConnection { get; set; }
     }
 }
