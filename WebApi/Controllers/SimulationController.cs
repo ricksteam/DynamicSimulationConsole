@@ -25,7 +25,7 @@ namespace DynamicSimulationConsole.WebApi
             if (!ModelState.IsValid) return BadRequest(ModelState);
             
             _logger.Log(LogLevel.Information, $"[POST]: Simulation/StartSimulation");
-            var newGraph = new Graph(input.nodes, input.routes);
+            var newGraph = new Graph(input.nodes, input.connections);
             var guid = _repository.AddGraph(newGraph);
             return Ok(guid);
         }
@@ -41,10 +41,10 @@ namespace DynamicSimulationConsole.WebApi
         }
 
         [HttpGet("ShortestPath")]
-        public IActionResult GetShortestPath([FromQuery] string id, [FromQuery] int startId, [FromQuery] int endId)
+        public IActionResult GetShortestPath([FromQuery] Guid id, [FromQuery] int startId, [FromQuery] int endId)
         {
             _logger.Log(LogLevel.Information, $"[GET]: Simulation/ShortestPath");
-            if (!_repository.TryGetGraphById(new Guid(id), out var graph)) return NotFound("ID not found in repository");
+            if (!_repository.TryGetGraphById(id, out var graph)) return NotFound("ID not found in repository");
 
             var shortestPath = graph.GetShortestPath(startId, endId);
             var str = "";

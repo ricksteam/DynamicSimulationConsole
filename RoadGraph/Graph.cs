@@ -4,16 +4,17 @@ namespace DynamicSimulationConsole.RoadGraph
 {
     public class Graph
     {
+        public Guid id;   
         private readonly List<PathNode> _nodes;
-        private readonly List<Tuple<int, int>> _routes;
-        
-        public Graph(Node[] nodes, Tuple<int, int>[] routes)
+        private readonly List<Tuple<int, int>> _connections; 
+     
+        public Graph(IEnumerable<Node> nodes, IEnumerable<Tuple<int, int>> connections)
         {
             _nodes = new List<PathNode>(GetPathNodes(nodes));  
-            _routes = new List<Tuple<int, int>>(routes);
+            _connections = new List<Tuple<int, int>>(connections);
         }
 
-        private PathNode[] GetPathNodes(Node[] nodes)
+        private static IEnumerable<PathNode> GetPathNodes(IEnumerable<Node> nodes)
         {
             return nodes.Select((node) => new PathNode(node)).ToArray();
         }
@@ -22,6 +23,7 @@ namespace DynamicSimulationConsole.RoadGraph
         {
             return _nodes.Where(x => x.nodeType == type).ToList<Node>();
         }
+        
         public bool TryGetNodesByType(NodeType type, out List<Node> nodes)
         {
             nodes = GetNodesByType(type);
@@ -40,12 +42,12 @@ namespace DynamicSimulationConsole.RoadGraph
         }
         public List<Tuple<int, int>> GetRoutesByNodeId(int id)
         {
-            return _routes.Where(x => x.Item1 == id || x.Item2 == id).ToList();
+            return _connections.Where(x => x.Item1 == id || x.Item2 == id).ToList();
         }
 
         private List<PathNode> GetAllNodesConnectedTo(int nodeId)
         {
-            var routes = _routes.Where(x => x.Item1 == nodeId).ToList();
+            var routes = _connections.Where(x => x.Item1 == nodeId).ToList();
             return routes.Select(route => GetNodeById(route.Item2)).ToList();   
         }
 
@@ -84,6 +86,7 @@ namespace DynamicSimulationConsole.RoadGraph
                     foreach(var neighbourNode in GetAllNodesConnectedTo(currentNode.nodeId))
                     {
                         if (neighbourNode.obstructed) continue;
+                       // if (neighbourNode.)
                         if (_closedList.Contains(neighbourNode)) continue;
 
                         var tentativeGCost = currentNode.gCost + currentNode.coordinate.DistanceTo(neighbourNode.coordinate);
@@ -109,7 +112,7 @@ namespace DynamicSimulationConsole.RoadGraph
         }
         
         
-        private List<PathNode> CalculatePath(PathNode endNode)
+        private static List<PathNode> CalculatePath(PathNode endNode)
         {
             var path = new List<PathNode> { endNode };
             var currentNode = endNode;
@@ -125,12 +128,12 @@ namespace DynamicSimulationConsole.RoadGraph
         }
 
 
-        private PathNode GetLowestFCostNode(List<PathNode> pathNodes)
+        private static PathNode GetLowestFCostNode(List<PathNode> pathNodes)
         {
             var lowestFCostNode = pathNodes[0];
-            foreach(var pathNode in pathNodes)
+            foreach (var pathNode in pathNodes.Where(pathNode => pathNode.fCost < lowestFCostNode.fCost))
             {
-                if (pathNode.fCost < lowestFCostNode.fCost) lowestFCostNode = pathNode;
+                lowestFCostNode = pathNode;
             }
             return lowestFCostNode;
         }

@@ -10,6 +10,7 @@ builder.Services.AddControllers().AddJsonOptions((options) => options.JsonSerial
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<IRoadGraphRepository, InMemoryRoadGraphRepository>();
+builder.Services.AddSingleton<IConvoyRepository, InMemoryConvoyRepository>();
 
 builder.Services.AddCors();
 

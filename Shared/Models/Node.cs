@@ -11,9 +11,22 @@ namespace DynamicSimulationConsole.Shared.Models
     public class Node
     {
         public int nodeId { get; set; } // GUID
-        public NodeType nodeType { get; set; }
+        public NodeType nodeType { get; set; }  
+        
+        public List<NodeData> nodeData { get; set; }
         public NodeCoordinate coordinate { get; set; }
         
         public bool oneWay { get; set; }
+
+        public float GetSpeedLimitMph()
+        {
+            var data = nodeData.Find(nd => nd.nodeDataType == NodeDataType.SpeedLimit);
+            if (data != null)
+            {
+                //return int.Parse()
+            }
+
+            return 0;
+        }
     }
 }

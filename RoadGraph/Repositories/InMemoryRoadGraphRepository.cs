@@ -19,6 +19,7 @@ public class InMemoryRoadGraphRepository : IRoadGraphRepository
     public Guid AddGraph(Graph graph)
     {
         var id = GenerateUniqueId();
+        graph.id = id;
         _graphs.Add(id, graph);
         return id;
     }

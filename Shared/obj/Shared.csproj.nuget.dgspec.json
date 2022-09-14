@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Shared\\Shared.csproj": {}
+    "C:\\Users\\Cyber\\Documents\\GitHub\\DynamicSimulationConsole\\Shared\\Shared.csproj": {}
   },
   "projects": {
-    "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Shared\\Shared.csproj": {
+    "C:\\Users\\Cyber\\Documents\\GitHub\\DynamicSimulationConsole\\Shared\\Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Shared\\Shared.csproj",
+        "projectUniqueName": "C:\\Users\\Cyber\\Documents\\GitHub\\DynamicSimulationConsole\\Shared\\Shared.csproj",
         "projectName": "Shared",
-        "projectPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Shared\\Shared.csproj",
-        "packagesPath": "C:\\Users\\brandon.lacy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Shared\\obj\\",
+        "projectPath": "C:\\Users\\Cyber\\Documents\\GitHub\\DynamicSimulationConsole\\Shared\\Shared.csproj",
+        "packagesPath": "C:\\Users\\Cyber\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Cyber\\Documents\\GitHub\\DynamicSimulationConsole\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\brandon.lacy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Cyber\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
