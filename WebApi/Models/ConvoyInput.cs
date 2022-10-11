@@ -1,8 +1,12 @@
-﻿namespace DynamicSimulationConsole.WebApi.Models;
+﻿using DynamicSimulationConsole.RoadGraph;
+
+namespace DynamicSimulationConsole.WebApi.Models;
 
 public class ConvoyInput
 {
-    public int numberOfVehicles { get; set; } 
-    public int maxSpeedMph { get; set; }
-    public double weightKg { get; set; }
+    public string ConvoyName { get; set; }
+    public int startNodeId { get; set; }
+    public int endNodeId { get; set; }
+    
+    public ConvoyVehicle[] ConvoyVehicles { get; set; }
 }

@@ -1,5 +1,6 @@
 using DynamicSimulationConsole.RoadGraph;
 using DynamicSimulationConsole.RoadGraph.Repositories;
+using DynamicSimulationConsole.Shared.Models;
 using DynamicSimulationConsole.WebApi.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -48,23 +49,22 @@ namespace DynamicSimulationConsole.WebApi
             _logger.Log(LogLevel.Information, $"[GET]: Simulation/ShortestPath");
             if (!_graphRepository.TryGetGraphById(routeId, out var graph)) return NotFound("ID not found in graph repository");
             if (!_convoyRepository.TryGetConvoyById(convoyId, out var convoy)) return NotFound("ID not found in convoy repository");
-            
-            Dictionary<Guid, List<NodePath> resultDict = Dictionary<Guid, List<NodePath>>();
-            List<Thread> threads = new List<Thread>();
-            foreach (ConvoyVehicle vehicle in convoy)
+                
+            var resultDict = new Dictionary<int, List<int>>();
+            var threads = new Task[convoy.vehicles.Count];
+            for (var i = 0; i < convoy.vehicles.Count; i++)
             {
-                var newThread = new Thread(() =>
+                var vehicle = convoy.vehicles[i];
+                threads[i] = Task.Factory.StartNew(() =>
                 {
                     var resultPath = ConvoyVehicleThread(vehicle, convoy, graph);
-                    resultDict.Add(vehicle.id, resultPath);
+                    resultDict.Add(vehicle.VehicleId, resultPath.Select(rp => rp.nodeId).ToList());
                 });
-                newThread.Start();
-                threads.Add(newThread);
             }
 
-            await Task.WaitAll(threads);    
+            Task.WaitAll(threads);
             
-            return Ok();
+            return Ok(resultDict);
         }
 
         private List<PathNode> ConvoyVehicleThread(ConvoyVehicle vehicle, Convoy convoy, Graph graph)

@@ -15,6 +15,7 @@ namespace DynamicSimulationConsole.Shared.Models
             nodeId = node.nodeId;
             nodeType = node.nodeType;
             coordinate = node.coordinate;
+            nodeData = node.nodeData;
             gCost = 0;
             hCost = 0;
             fCost = 0;
@@ -25,7 +26,7 @@ namespace DynamicSimulationConsole.Shared.Models
             fCost = gCost + hCost;
         }
         
-        public bool IsValidNode(float speed, float weight)
+        public bool IsValidNode(float weight)
         {
             //var speedLimit = GetSpeedLimitMph();
             var weightLimit = GetWeightLimitKg();

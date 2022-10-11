@@ -72,7 +72,8 @@ namespace DynamicSimulationConsole.RoadGraph
                 }
 
                 pathNodeStart.gCost = 0;
-                pathNodeStart.hCost = pathNodeStart.coordinate.DistanceTo(pathNodeEnd.coordinate);
+                //pathNodeStart.hCost = pathNodeStart.coordinate.DistanceTo(pathNodeEnd.coordinate);
+                pathNodeStart.hCost = CalculateWeightBetweenNodes(pathNodeStart, pathNodeEnd, vehicle);
                 pathNodeStart.CalculateFCost();
 
                 while(openList.Count > 0)
@@ -85,15 +86,17 @@ namespace DynamicSimulationConsole.RoadGraph
 
                     foreach(var neighbourNode in GetAllNodesConnectedTo(currentNode.nodeId))
                     {
-                        if (!neighbourNode.IsValidNode(vehicle.maxSpeedMph, vehicle.weightKg)) continue;
+                        if (!neighbourNode.IsValidNode(vehicle.VehicleWeight)) continue;
                         if (closedList.Contains(neighbourNode)) continue;
 
-                        var tentativeGCost = currentNode.gCost + currentNode.coordinate.DistanceTo(neighbourNode.coordinate);
+                        //var tentativeGCost = currentNode.gCost + currentNode.coordinate.DistanceTo(neighbourNode.coordinate);
+                        var tentativeGCost = currentNode.gCost + CalculateWeightBetweenNodes(currentNode, neighbourNode, vehicle);
                         if (tentativeGCost >= neighbourNode.gCost) continue;
                         
                         neighbourNode.previousNode = currentNode;
                         neighbourNode.gCost = tentativeGCost;
-                        neighbourNode.hCost = neighbourNode.coordinate.DistanceTo(pathNodeEnd.coordinate);
+                        //neighbourNode.hCost = neighbourNode.coordinate.DistanceTo(pathNodeEnd.coordinate);
+                        neighbourNode.hCost = CalculateWeightBetweenNodes(neighbourNode, pathNodeEnd, vehicle);
                         neighbourNode.CalculateFCost();
 
                         if (!openList.Contains(neighbourNode))
@@ -108,7 +111,17 @@ namespace DynamicSimulationConsole.RoadGraph
             return null;
            
         }
-        
+
+        private double CalculateWeightBetweenNodes(PathNode start, PathNode end, ConvoyVehicle vehicle)
+        {
+            var averageSpeedLimit = (start.GetSpeedLimitMph() + end.GetSpeedLimitMph()) / 2d;
+            var speedLimitMax = vehicle.VehicleMaxSpeed;
+
+            var speedWeight = speedLimitMax > averageSpeedLimit ? averageSpeedLimit : speedLimitMax;
+            var distanceWeight = start.coordinate.DistanceTo(end.coordinate);
+
+            return speedWeight + distanceWeight;
+        }
         
         private static List<PathNode> CalculatePath(PathNode endNode)
         {

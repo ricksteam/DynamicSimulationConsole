@@ -2,6 +2,7 @@ using DynamicSimulationConsole.RoadGraph;
 using DynamicSimulationConsole.RoadGraph.Repositories;
 using DynamicSimulationConsole.WebApi.Models;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 
 namespace DynamicSimulationConsole.WebApi
@@ -24,7 +25,7 @@ namespace DynamicSimulationConsole.WebApi
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
             _logger.Log(LogLevel.Information, $"[POST]: NewConvoy");
-            var convoy = new Convoy();
+            var convoy = new Convoy(input.startNodeId, input.endNodeId, input.ConvoyVehicles);
             var guid = _repository.AddConvoy(convoy);
             return Ok(guid);
         }
@@ -35,7 +36,7 @@ namespace DynamicSimulationConsole.WebApi
             _logger.Log(LogLevel.Information, $"[GET]: GetConvoy");
             if (_repository.TryGetConvoyById(id, out var convoy))
             {
-                return Ok(convoy);
+                return Ok(JsonConvert.SerializeObject(convoy));
             }
 
             return NotFound();

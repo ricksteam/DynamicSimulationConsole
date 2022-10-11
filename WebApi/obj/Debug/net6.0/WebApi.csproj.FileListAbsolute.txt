@@ -62,3 +62,35 @@ C:\Users\Cyber\Documents\GitHub\DynamicSimulationConsole\WebApi\obj\Debug\net6.0
 C:\Users\Cyber\Documents\GitHub\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\WebApi.pdb
 C:\Users\Cyber\Documents\GitHub\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\WebApi.genruntimeconfig.cache
 C:\Users\Cyber\Documents\GitHub\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\ref\WebApi.dll
+F:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\appsettings.Development.json
+F:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\appsettings.json
+F:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\WebApi.exe
+F:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\WebApi.deps.json
+F:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\WebApi.runtimeconfig.json
+F:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\WebApi.dll
+F:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\WebApi.pdb
+F:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Microsoft.OpenApi.dll
+F:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Newtonsoft.Json.dll
+F:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+F:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+F:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+F:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\RoadGraph.dll
+F:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Shared.dll
+F:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\RoadGraph.pdb
+F:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Shared.pdb
+F:\Graduate Research\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\WebApi.csproj.AssemblyReference.cache
+F:\Graduate Research\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\WebApi.GeneratedMSBuildEditorConfig.editorconfig
+F:\Graduate Research\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\WebApi.AssemblyInfoInputs.cache
+F:\Graduate Research\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\WebApi.AssemblyInfo.cs
+F:\Graduate Research\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\WebApi.csproj.CoreCompileInputs.cache
+F:\Graduate Research\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\WebApi.MvcApplicationPartsAssemblyInfo.cs
+F:\Graduate Research\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\WebApi.MvcApplicationPartsAssemblyInfo.cache
+F:\Graduate Research\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\staticwebassets.build.json
+F:\Graduate Research\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\staticwebassets.development.json
+F:\Graduate Research\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\scopedcss\bundle\WebApi.styles.css
+F:\Graduate Research\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\WebApi.csproj.CopyComplete
+F:\Graduate Research\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\WebApi.dll
+F:\Graduate Research\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\refint\WebApi.dll
+F:\Graduate Research\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\WebApi.pdb
+F:\Graduate Research\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\WebApi.genruntimeconfig.cache
+F:\Graduate Research\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\ref\WebApi.dll

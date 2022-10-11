@@ -28,3 +28,18 @@ C:\Users\Cyber\Documents\GitHub\DynamicSimulationConsole\RoadGraph\bin\Debug\net
 C:\Users\Cyber\Documents\GitHub\DynamicSimulationConsole\RoadGraph\bin\Debug\net6.0\Shared.pdb
 C:\Users\Cyber\Documents\GitHub\DynamicSimulationConsole\RoadGraph\obj\Debug\net6.0\RoadGraph.csproj.CopyComplete
 C:\Users\Cyber\Documents\GitHub\DynamicSimulationConsole\RoadGraph\obj\Debug\net6.0\ref\RoadGraph.dll
+F:\Graduate Research\DynamicSimulationConsole\RoadGraph\bin\Debug\net6.0\RoadGraph.deps.json
+F:\Graduate Research\DynamicSimulationConsole\RoadGraph\bin\Debug\net6.0\RoadGraph.dll
+F:\Graduate Research\DynamicSimulationConsole\RoadGraph\bin\Debug\net6.0\RoadGraph.pdb
+F:\Graduate Research\DynamicSimulationConsole\RoadGraph\bin\Debug\net6.0\Shared.dll
+F:\Graduate Research\DynamicSimulationConsole\RoadGraph\bin\Debug\net6.0\Shared.pdb
+F:\Graduate Research\DynamicSimulationConsole\RoadGraph\obj\Debug\net6.0\RoadGraph.csproj.AssemblyReference.cache
+F:\Graduate Research\DynamicSimulationConsole\RoadGraph\obj\Debug\net6.0\RoadGraph.GeneratedMSBuildEditorConfig.editorconfig
+F:\Graduate Research\DynamicSimulationConsole\RoadGraph\obj\Debug\net6.0\RoadGraph.AssemblyInfoInputs.cache
+F:\Graduate Research\DynamicSimulationConsole\RoadGraph\obj\Debug\net6.0\RoadGraph.AssemblyInfo.cs
+F:\Graduate Research\DynamicSimulationConsole\RoadGraph\obj\Debug\net6.0\RoadGraph.csproj.CoreCompileInputs.cache
+F:\Graduate Research\DynamicSimulationConsole\RoadGraph\obj\Debug\net6.0\RoadGraph.csproj.CopyComplete
+F:\Graduate Research\DynamicSimulationConsole\RoadGraph\obj\Debug\net6.0\RoadGraph.dll
+F:\Graduate Research\DynamicSimulationConsole\RoadGraph\obj\Debug\net6.0\refint\RoadGraph.dll
+F:\Graduate Research\DynamicSimulationConsole\RoadGraph\obj\Debug\net6.0\RoadGraph.pdb
+F:\Graduate Research\DynamicSimulationConsole\RoadGraph\obj\Debug\net6.0\ref\RoadGraph.dll

@@ -8,26 +8,20 @@ public class Convoy
 
     public List<ConvoyVehicle> vehicles;
     
-    public NodeCoordinate startPosition;
-    public NodeCoordinate endPosition;
-    public Convoy(NodeCoordinate startPosition, NodeCoordinate endPosition)
+    public int startPositionId;
+    public int endPositionId;
+    public Convoy(int startPositionId, int endPositionId, ConvoyVehicle[] vehicles)
     {
-        vehicles = new List<ConvoyVehicle>();
-        this.startPosition = startPosition;
-        this.endPosition = endPosition;
+        this.vehicles = vehicles.ToList();
+        this.startPositionId = startPositionId;
+        this.endPositionId = endPositionId;
     }
 }
 
 public class ConvoyVehicle
 {
-    public Guid id;
-    public int maxSpeedMph;   
-    public float weightKg;
-
-    public ConvoyVehicle(int maxSpeedMph, float weightKg)
-    {
-        this.maxSpeedMph = maxSpeedMph;
-        this.weightKg = weightKg;
-
-    }
+    public int VehicleId { get; set; }
+    public string VehicleName  { get; set; }
+    public int VehicleMaxSpeed  { get; set; }
+    public float VehicleWeight  { get; set; }
 }

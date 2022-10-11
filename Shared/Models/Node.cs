@@ -38,18 +38,24 @@ namespace DynamicSimulationConsole.Shared.Models
         //     return 0;
         // }
 
-        private NodeData GetNodeDataByType(NodeDataType type) => nodeData.Find(nd => nd.nodeDataType == type);
+        private NodeData GetNodeDataByType(NodeDataType type)
+        {
+            var result = nodeData.Find(nd => nd.nodeDataType == type);
+            return result;
+        } 
 
-        public float GetSpeedLimitMph()
+        public double GetSpeedLimitMph()
         {
             var data = GetNodeDataByType(NodeDataType.SpeedLimit);
-            return float.TryParse(data.nodeDataValue, out var value) ? value : default(float);
+            //return float.TryParse(data.nodeDataValue, out var value) ? value : default(float);
+            return data?.nodeDataValue ?? default;
         }
 
-        public float GetWeightLimitKg()
+        public double GetWeightLimitKg()
         {
             var data = GetNodeDataByType(NodeDataType.WeightLimit);
-            return float.TryParse(data.nodeDataValue, out var value) ? value : default(float);
+            //return float.TryParse(data.nodeDataValue, out var value) ? value : default(float);
+            return data?.nodeDataValue ?? default;
         }
     }
 }

@@ -10,5 +10,5 @@ public enum NodeDataType
 public class NodeData
 {
     public NodeDataType nodeDataType { get; set; }
-    public string nodeDataValue { get; set; }
+    public double nodeDataValue { get; set; }
 }
