@@ -10,12 +10,14 @@ namespace DynamicSimulationConsole.WebApi
     public class SimulationController : ControllerBase
     {
         private readonly ILogger<SimulationController> _logger;
-        private readonly IRoadGraphRepository _repository;
+        private readonly IRoadGraphRepository _graphRepository;
+        private readonly IConvoyRepository _convoyRepository;
         
-        public SimulationController(ILogger<SimulationController> logger, IRoadGraphRepository repository)
+        public SimulationController(ILogger<SimulationController> logger, IRoadGraphRepository graphRepository, IConvoyRepository convoyRepository)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-            _repository = repository ?? throw new ArgumentNullException(nameof(repository));
+            _graphRepository = graphRepository ?? throw new ArgumentNullException(nameof(graphRepository));
+            _convoyRepository = convoyRepository ?? throw new ArgumentNullException(nameof(convoyRepository));
         }
 
         
@@ -26,7 +28,7 @@ namespace DynamicSimulationConsole.WebApi
             
             _logger.Log(LogLevel.Information, $"[POST]: Simulation/StartSimulation");
             var newGraph = new Graph(input.nodes, input.connections);
-            var guid = _repository.AddGraph(newGraph);
+            var guid = _graphRepository.AddGraph(newGraph);
             return Ok(guid);
         }
         
@@ -36,24 +38,38 @@ namespace DynamicSimulationConsole.WebApi
             if (!ModelState.IsValid) return BadRequest(ModelState);
             
             _logger.Log(LogLevel.Information, $"[DELETE]: Simulation/StopSimulation");
-            var deleted = _repository.TryDeleteGraphById(id);
+            var deleted = _graphRepository.TryDeleteGraphById(id);
             return Ok(deleted);
         }
 
         [HttpGet("ShortestPath")]
-        public IActionResult GetShortestPath([FromQuery] Guid id, [FromQuery] int startId, [FromQuery] int endId)
+        public IActionResult GetShortestPath([FromQuery] Guid routeId, [FromQuery] Guid convoyId)
         {
             _logger.Log(LogLevel.Information, $"[GET]: Simulation/ShortestPath");
-            if (!_repository.TryGetGraphById(id, out var graph)) return NotFound("ID not found in repository");
-
-            var shortestPath = graph.GetShortestPath(startId, endId);
-            var str = "";
-            foreach(var node in shortestPath)
-            {
-                str += $"Node {node.nodeId}\n";
-            }
+            if (!_graphRepository.TryGetGraphById(routeId, out var graph)) return NotFound("ID not found in graph repository");
+            if (!_convoyRepository.TryGetConvoyById(convoyId, out var convoy)) return NotFound("ID not found in convoy repository");
             
-            return Ok(str);
+            Dictionary<Guid, List<NodePath> resultDict = Dictionary<Guid, List<NodePath>>();
+            List<Thread> threads = new List<Thread>();
+            foreach (ConvoyVehicle vehicle in convoy)
+            {
+                var newThread = new Thread(() =>
+                {
+                    var resultPath = ConvoyVehicleThread(vehicle, convoy, graph);
+                    resultDict.Add(vehicle.id, resultPath);
+                });
+                newThread.Start();
+                threads.Add(newThread);
+            }
+
+            await Task.WaitAll(threads);    
+            
+            return Ok();
+        }
+
+        private List<PathNode> ConvoyVehicleThread(ConvoyVehicle vehicle, Convoy convoy, Graph graph)
+        {
+            return graph.GetShortestPath(convoy.startPositionId, convoy.endPositionId, vehicle);
         }
     }
 }

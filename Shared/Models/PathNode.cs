@@ -7,8 +7,6 @@ namespace DynamicSimulationConsole.Shared.Models
         public double gCost;
         public double hCost;
         public double fCost;
-
-        public bool obstructed;
         
         public PathNode previousNode;
 
@@ -25,6 +23,17 @@ namespace DynamicSimulationConsole.Shared.Models
         public void CalculateFCost()
         {
             fCost = gCost + hCost;
+        }
+        
+        public bool IsValidNode(float speed, float weight)
+        {
+            //var speedLimit = GetSpeedLimitMph();
+            var weightLimit = GetWeightLimitKg();
+
+            if (weight >= weightLimit) return false;
+            //if (speed <= speedLimit) return false;
+
+            return true; 
         }
     } 
 }

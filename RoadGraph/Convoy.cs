@@ -1,24 +1,33 @@
-﻿namespace DynamicSimulationConsole.RoadGraph;
+﻿using DynamicSimulationConsole.Shared.Models;
+
+namespace DynamicSimulationConsole.RoadGraph;
 
 public class Convoy
 {
     public Guid id;
 
     public List<ConvoyVehicle> vehicles;
-    public Convoy()
+    
+    public NodeCoordinate startPosition;
+    public NodeCoordinate endPosition;
+    public Convoy(NodeCoordinate startPosition, NodeCoordinate endPosition)
     {
         vehicles = new List<ConvoyVehicle>();
+        this.startPosition = startPosition;
+        this.endPosition = endPosition;
     }
 }
 
 public class ConvoyVehicle
 {
-    public int maxSpeedMph;
-    public double weightKg;
-    
-    public ConvoyVehicle(int maxSpeedMph, double weightKg)
+    public Guid id;
+    public int maxSpeedMph;   
+    public float weightKg;
+
+    public ConvoyVehicle(int maxSpeedMph, float weightKg)
     {
         this.maxSpeedMph = maxSpeedMph;
         this.weightKg = weightKg;
+
     }
 }

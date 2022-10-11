@@ -1,32 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Cyber\\Documents\\GitHub\\DynamicSimulationConsole\\Shared\\Shared.csproj": {}
+    "F:\\Graduate Research\\DynamicSimulationConsole\\Shared\\Shared.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Cyber\\Documents\\GitHub\\DynamicSimulationConsole\\Shared\\Shared.csproj": {
+    "F:\\Graduate Research\\DynamicSimulationConsole\\Shared\\Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-<<<<<<< Updated upstream:Shared/obj/Shared.csproj.nuget.dgspec.json
-        "projectUniqueName": "C:\\Users\\Cyber\\Documents\\GitHub\\DynamicSimulationConsole\\Shared\\Shared.csproj",
+        "projectUniqueName": "F:\\Graduate Research\\DynamicSimulationConsole\\Shared\\Shared.csproj",
         "projectName": "Shared",
-        "projectPath": "C:\\Users\\Cyber\\Documents\\GitHub\\DynamicSimulationConsole\\Shared\\Shared.csproj",
+        "projectPath": "F:\\Graduate Research\\DynamicSimulationConsole\\Shared\\Shared.csproj",
         "packagesPath": "C:\\Users\\Cyber\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Cyber\\Documents\\GitHub\\DynamicSimulationConsole\\Shared\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\Cyber\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-=======
-        "projectUniqueName": "F:\\Graduate Research\\DynamicSimulationConsole\\DynamicSimulationConsole.csproj",
-        "projectName": "DynamicSimulationConsole",
-        "projectPath": "F:\\Graduate Research\\DynamicSimulationConsole\\DynamicSimulationConsole.csproj",
-        "packagesPath": "C:\\Users\\Cyber\\.nuget\\packages\\",
-        "outputPath": "F:\\Graduate Research\\DynamicSimulationConsole\\obj\\",
+        "outputPath": "F:\\Graduate Research\\DynamicSimulationConsole\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Cyber\\AppData\\Roaming\\NuGet\\NuGet.Config"
->>>>>>> Stashed changes:obj/DynamicSimulationConsole.csproj.nuget.dgspec.json
         ],
         "originalTargetFrameworks": [
           "net6.0"

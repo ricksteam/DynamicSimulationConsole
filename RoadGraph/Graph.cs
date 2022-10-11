@@ -51,10 +51,10 @@ namespace DynamicSimulationConsole.RoadGraph
             return routes.Select(route => GetNodeById(route.Item2)).ToList();   
         }
 
-        public List<PathNode> GetShortestPath(int nodeIdStart, int nodeIdEnd)
+        public List<PathNode> GetShortestPath(int nodeIdStart, int nodeIdEnd, ConvoyVehicle vehicle)
         {
-            var _openList = new List<PathNode>();
-            var _closedList = new List<PathNode>();
+            var openList = new List<PathNode>();  
+            var closedList = new List<PathNode>();
 
             
             if (TryGetNodeById(nodeIdStart, out var nodeStart) && TryGetNodeById (nodeIdEnd, out var nodeEnd))
@@ -62,7 +62,7 @@ namespace DynamicSimulationConsole.RoadGraph
                 var pathNodeStart = new PathNode(nodeStart);
                 var pathNodeEnd = new PathNode(nodeEnd);
 
-                _openList.Add(pathNodeStart);
+                openList.Add(pathNodeStart);
 
                 foreach (var node in _nodes)
                 {
@@ -75,32 +75,30 @@ namespace DynamicSimulationConsole.RoadGraph
                 pathNodeStart.hCost = pathNodeStart.coordinate.DistanceTo(pathNodeEnd.coordinate);
                 pathNodeStart.CalculateFCost();
 
-                while(_openList.Count > 0)
+                while(openList.Count > 0)
                 {
-                    var currentNode = GetLowestFCostNode(_openList);
+                    var currentNode = GetLowestFCostNode(openList);
                     var newEnd = GetNodeById(nodeIdEnd);
                     if (currentNode.nodeId == pathNodeEnd.nodeId) return CalculatePath(newEnd);
-                    _openList.Remove(currentNode);
-                    _closedList.Add(currentNode);
+                    openList.Remove(currentNode);
+                    closedList.Add(currentNode);
 
                     foreach(var neighbourNode in GetAllNodesConnectedTo(currentNode.nodeId))
                     {
-                        if (neighbourNode.obstructed) continue;
-                       // if (neighbourNode.)
-                        if (_closedList.Contains(neighbourNode)) continue;
+                        if (!neighbourNode.IsValidNode(vehicle.maxSpeedMph, vehicle.weightKg)) continue;
+                        if (closedList.Contains(neighbourNode)) continue;
 
                         var tentativeGCost = currentNode.gCost + currentNode.coordinate.DistanceTo(neighbourNode.coordinate);
-                        if (tentativeGCost < neighbourNode.gCost)
-                        {
-                            neighbourNode.previousNode = currentNode;
-                            neighbourNode.gCost = tentativeGCost;
-                            neighbourNode.hCost = neighbourNode.coordinate.DistanceTo(pathNodeEnd.coordinate);
-                            neighbourNode.CalculateFCost();
+                        if (tentativeGCost >= neighbourNode.gCost) continue;
+                        
+                        neighbourNode.previousNode = currentNode;
+                        neighbourNode.gCost = tentativeGCost;
+                        neighbourNode.hCost = neighbourNode.coordinate.DistanceTo(pathNodeEnd.coordinate);
+                        neighbourNode.CalculateFCost();
 
-                            if (!_openList.Contains(neighbourNode))
-                            {
-                                _openList.Add(neighbourNode);
-                            }
+                        if (!openList.Contains(neighbourNode))
+                        {
+                            openList.Add(neighbourNode);
                         }
                     }
                 }
@@ -147,5 +145,7 @@ namespace DynamicSimulationConsole.RoadGraph
 
             return -1;
         }
+        
+        
     }
 }

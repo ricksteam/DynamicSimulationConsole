@@ -40,6 +40,5 @@ namespace DynamicSimulationConsole.WebApi
 
             return NotFound();
         }
-        
     }
 }

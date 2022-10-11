@@ -18,15 +18,38 @@ namespace DynamicSimulationConsole.Shared.Models
         
         public bool oneWay { get; set; }
 
+        // public T GetNodeDataByType<T>(NodeDataType type)
+        // {
+        //     var data = nodeData.Find(nd => nd.nodeDataType == type);
+        //     if (data != null)
+        //     {
+        //         if (typeof(T) == typeof(int))
+        //         {
+        //             if (float.TryParse(data.nodeDataValue, out var floatValue))
+        //             {
+        //                 return (float)floatValue; 
+        //             }
+        //
+        //             return default(T);
+        //         }
+        //         
+        //     }
+        //
+        //     return 0;
+        // }
+
+        private NodeData GetNodeDataByType(NodeDataType type) => nodeData.Find(nd => nd.nodeDataType == type);
+
         public float GetSpeedLimitMph()
         {
-            var data = nodeData.Find(nd => nd.nodeDataType == NodeDataType.SpeedLimit);
-            if (data != null)
-            {
-                //return int.Parse()
-            }
+            var data = GetNodeDataByType(NodeDataType.SpeedLimit);
+            return float.TryParse(data.nodeDataValue, out var value) ? value : default(float);
+        }
 
-            return 0;
+        public float GetWeightLimitKg()
+        {
+            var data = GetNodeDataByType(NodeDataType.WeightLimit);
+            return float.TryParse(data.nodeDataValue, out var value) ? value : default(float);
         }
     }
 }
