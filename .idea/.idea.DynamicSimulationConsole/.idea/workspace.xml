@@ -15,6 +15,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/198a6261cebc324728dcc4c178edc5f2894123f711722c80e8557cbfd27651/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d9d9faea5e6ed6438a777ef8c6eed41261f81d8e86488ed923ad92564f54e/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApi/Controllers/ConvoyController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApi/Controllers/SimulationController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -109,7 +110,7 @@
       <updated>1664643222079</updated>
       <workItem from="1664643229179" duration="757000" />
       <workItem from="1664901617236" duration="5689000" />
-      <workItem from="1665496699672" duration="3521000" />
+      <workItem from="1665496699672" duration="7285000" />
     </task>
     <servers />
   </component>
@@ -131,128 +132,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/WebApi/Controllers/SimulationController.cs</url>
-          <line>60</line>
-          <properties documentPath="F:\Graduate Research\DynamicSimulationConsole\WebApi\Controllers\SimulationController.cs" initialLine="60" containingFunctionPresentation="lambda expression inside method 'GetShortestPath'">
-            <startOffsets>
-              <option value="2840" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2919" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/WebApi/Controllers/SimulationController.cs</url>
-          <line>59</line>
-          <properties documentPath="F:\Graduate Research\DynamicSimulationConsole\WebApi\Controllers\SimulationController.cs" initialLine="59" containingFunctionPresentation="lambda expression inside method 'GetShortestPath'">
-            <startOffsets>
-              <option value="2758" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2819" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/RoadGraph/Graph.cs</url>
-          <line>76</line>
-          <properties documentPath="F:\Graduate Research\DynamicSimulationConsole\RoadGraph\Graph.cs" initialLine="76" containingFunctionPresentation="method 'GetShortestPath'">
-            <startOffsets>
-              <option value="2703" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2734" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/RoadGraph/Graph.cs</url>
-          <line>108</line>
-          <properties documentPath="F:\Graduate Research\DynamicSimulationConsole\RoadGraph\Graph.cs" initialLine="108" containingFunctionPresentation="method 'GetShortestPath'">
-            <startOffsets>
-              <option value="4392" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4404" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/RoadGraph/Graph.cs</url>
-          <line>110</line>
-          <properties documentPath="F:\Graduate Research\DynamicSimulationConsole\RoadGraph\Graph.cs" initialLine="110" containingFunctionPresentation="method 'GetShortestPath'">
-            <startOffsets>
-              <option value="4431" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4443" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/RoadGraph/Graph.cs</url>
-          <line>64</line>
-          <properties documentPath="F:\Graduate Research\DynamicSimulationConsole\RoadGraph\Graph.cs" initialLine="64" containingFunctionPresentation="method 'GetShortestPath'">
-            <startOffsets>
-              <option value="2193" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2221" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/RoadGraph/Graph.cs</url>
-          <line>101</line>
-          <properties documentPath="F:\Graduate Research\DynamicSimulationConsole\RoadGraph\Graph.cs" initialLine="101" containingFunctionPresentation="method 'GetShortestPath'">
-            <startOffsets>
-              <option value="4187" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4225" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/RoadGraph/Graph.cs</url>
-          <line>103</line>
-          <properties documentPath="F:\Graduate Research\DynamicSimulationConsole\RoadGraph\Graph.cs" initialLine="103" containingFunctionPresentation="method 'GetShortestPath'">
-            <startOffsets>
-              <option value="4280" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4308" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/RoadGraph/Graph.cs</url>
-          <line>80</line>
-          <properties documentPath="F:\Graduate Research\DynamicSimulationConsole\RoadGraph\Graph.cs" initialLine="80" containingFunctionPresentation="method 'GetShortestPath'">
-            <startOffsets>
-              <option value="2816" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2863" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

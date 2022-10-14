@@ -58,18 +58,26 @@ namespace DynamicSimulationConsole.WebApi
                 threads[i] = Task.Factory.StartNew(() =>
                 {
                     var resultPath = ConvoyVehicleThread(vehicle, convoy, graph);
-                    resultDict.Add(vehicle.VehicleId, resultPath.Select(rp => rp.nodeId).ToList());
+                    resultDict.Add(vehicle.VehicleId, resultPath?.Select(rp => rp.nodeId).ToList() ?? new List<int>());
                 });
             }
-
+            
             Task.WaitAll(threads);
+            
+            // foreach (var vehicle in convoy.vehicles)
+            // {
+            //     var resultPath = ConvoyVehicleThread(vehicle, convoy, graph);
+            //     resultDict.Add(vehicle.VehicleId, resultPath?.Select(rp => rp.nodeId).ToList() ?? new List<int>());
+            // }
+            
+
             
             return Ok(resultDict);
         }
 
         private List<PathNode> ConvoyVehicleThread(ConvoyVehicle vehicle, Convoy convoy, Graph graph)
         {
-            return graph.GetShortestPath(convoy.startPositionId, convoy.endPositionId, vehicle);
+            return graph.GetShortestPath(convoy.startPositionId, convoy.endPositionId, vehicle);    
         }
     }
 }
