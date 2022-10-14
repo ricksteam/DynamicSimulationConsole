@@ -87,7 +87,7 @@ namespace DynamicSimulationConsole.RoadGraph
                     foreach(var neighbourNode in GetAllNodesConnectedTo(currentNode.nodeId))
                     {
                         if (!neighbourNode.IsValidNode(vehicle.VehicleWeight)) continue;
-                        if (closedList.Contains(neighbourNode)) continue;
+                        if (closedList.Find(cl => cl.nodeId == neighbourNode.nodeId) != null) continue;
 
                         //var tentativeGCost = currentNode.gCost + currentNode.coordinate.DistanceTo(neighbourNode.coordinate);
                         var tentativeGCost = currentNode.gCost + CalculateWeightBetweenNodes(currentNode, neighbourNode, vehicle);
@@ -99,7 +99,7 @@ namespace DynamicSimulationConsole.RoadGraph
                         neighbourNode.hCost = CalculateWeightBetweenNodes(neighbourNode, pathNodeEnd, vehicle);
                         neighbourNode.CalculateFCost();
 
-                        if (!openList.Contains(neighbourNode))
+                        if (openList.Find(ol => ol.nodeId == neighbourNode.nodeId) == null)
                         {
                             openList.Add(neighbourNode);
                         }
@@ -121,6 +121,8 @@ namespace DynamicSimulationConsole.RoadGraph
             var distanceWeight = start.coordinate.DistanceTo(end.coordinate);
 
             return speedWeight + distanceWeight;
+            
+            
         }
         
         private static List<PathNode> CalculatePath(PathNode endNode)
