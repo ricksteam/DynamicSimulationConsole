@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Graduate Research\\DynamicSimulationConsole\\Visualization\\Visualization.csproj",
+      "projectUniqueName": "G:\\Graduate Research\\DynamicSimulationConsole\\Visualization\\Visualization.csproj",
       "projectName": "Visualization",
-      "projectPath": "F:\\Graduate Research\\DynamicSimulationConsole\\Visualization\\Visualization.csproj",
+      "projectPath": "G:\\Graduate Research\\DynamicSimulationConsole\\Visualization\\Visualization.csproj",
       "packagesPath": "C:\\Users\\Cyber\\.nuget\\packages\\",
-      "outputPath": "F:\\Graduate Research\\DynamicSimulationConsole\\Visualization\\obj\\",
+      "outputPath": "G:\\Graduate Research\\DynamicSimulationConsole\\Visualization\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Cyber\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -59,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\Cyber\\.dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\Cyber\\.dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

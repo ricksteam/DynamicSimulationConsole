@@ -114,15 +114,16 @@ namespace DynamicSimulationConsole.RoadGraph
 
         private double CalculateWeightBetweenNodes(PathNode start, PathNode end, ConvoyVehicle vehicle)
         {
-            var averageSpeedLimit = (start.GetSpeedLimitMph() + end.GetSpeedLimitMph()) / 2d;
+            var startSpeedLimit = start.GetSpeedLimitMph();
             var speedLimitMax = vehicle.VehicleMaxSpeed;
 
-            var speedWeight = speedLimitMax > averageSpeedLimit ? averageSpeedLimit : speedLimitMax;
-            var distanceWeight = start.coordinate.DistanceTo(end.coordinate);
+            var distance = start.coordinate.DistanceTo(end.coordinate);
+            var distanceInMiles = distance * 0.000621371d;
+            
+            var speedWeight = speedLimitMax > startSpeedLimit ? startSpeedLimit : speedLimitMax;
+            var time = distanceInMiles / speedWeight;
 
-            return speedWeight + distanceWeight;
-            
-            
+            return time;
         }
         
         private static List<PathNode> CalculatePath(PathNode endNode)

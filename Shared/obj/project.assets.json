@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Graduate Research\\DynamicSimulationConsole\\Shared\\Shared.csproj",
+      "projectUniqueName": "G:\\Graduate Research\\DynamicSimulationConsole\\Shared\\Shared.csproj",
       "projectName": "Shared",
-      "projectPath": "F:\\Graduate Research\\DynamicSimulationConsole\\Shared\\Shared.csproj",
+      "projectPath": "G:\\Graduate Research\\DynamicSimulationConsole\\Shared\\Shared.csproj",
       "packagesPath": "C:\\Users\\Cyber\\.nuget\\packages\\",
-      "outputPath": "F:\\Graduate Research\\DynamicSimulationConsole\\Shared\\obj\\",
+      "outputPath": "G:\\Graduate Research\\DynamicSimulationConsole\\Shared\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Cyber\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -59,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\Cyber\\.dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\Cyber\\.dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
