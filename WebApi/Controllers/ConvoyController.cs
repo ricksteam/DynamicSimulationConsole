@@ -4,7 +4,6 @@ using DynamicSimulationConsole.WebApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
-
 namespace DynamicSimulationConsole.WebApi
 {
     [ApiController]
@@ -25,9 +24,18 @@ namespace DynamicSimulationConsole.WebApi
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
             _logger.Log(LogLevel.Information, $"[POST]: NewConvoy");
-            var convoy = new Convoy(input.startNodeId, input.endNodeId, input.ConvoyVehicles);
+            var convoy = new Convoy(input.ConvoyName, input.ConvoyVehicles);
             var guid = _repository.AddConvoy(convoy);
             return Ok(guid);
+        }
+        
+        [HttpGet("GetAllConvoys")]
+        public IActionResult GetAllConvoys()
+        {
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+            _logger.Log(LogLevel.Information, $"[GET]: GetAllConvoys");
+            var convoys = _repository.GetAllConvoys();
+            return Ok(JsonConvert.SerializeObject(convoys));
         }
 
         [HttpGet("GetConvoyById")]

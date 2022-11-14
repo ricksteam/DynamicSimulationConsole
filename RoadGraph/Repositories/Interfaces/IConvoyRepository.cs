@@ -7,4 +7,6 @@ public interface IConvoyRepository
     public Guid AddConvoy(Convoy convoy);
     public void Clear();
     public bool TryDeleteConvoyById(Guid id);
+
+    public IEnumerable<Convoy> GetAllConvoys();
 }

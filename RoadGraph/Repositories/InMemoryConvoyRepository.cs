@@ -31,6 +31,11 @@ public class InMemoryConvoyRepository : IConvoyRepository
         return _convoys.Remove(id);
     }
 
+    public IEnumerable<Convoy> GetAllConvoys()
+    {
+        return _convoys.Values;
+    }
+
     private Guid GenerateUniqueId()
     {
         var id = Guid.NewGuid();

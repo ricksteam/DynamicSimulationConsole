@@ -7,7 +7,11 @@
     <projectFile profileName="WebApi">WebApi/WebApi.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="662660e4-33c0-4450-9309-4e011da23d6c" name="Changes" comment="" />
+=======
+    <list default="true" id="a5c7b899-b95d-4dc6-8235-6753be685e3a" name="Changes" comment="" />
+>>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -105,11 +109,17 @@
       <created>1664643222079</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< Updated upstream
       <updated>1664643222079</updated>
       <workItem from="1664643229179" duration="757000" />
       <workItem from="1664901617236" duration="5689000" />
       <workItem from="1665496699672" duration="7285000" />
       <workItem from="1666717471447" duration="1187000" />
+=======
+      <updated>1662484436667</updated>
+      <workItem from="1662484453240" duration="3075000" />
+      <workItem from="1663010024350" duration="6419000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>

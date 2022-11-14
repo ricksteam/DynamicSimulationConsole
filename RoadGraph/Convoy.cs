@@ -5,16 +5,13 @@ namespace DynamicSimulationConsole.RoadGraph;
 public class Convoy
 {
     public Guid id;
+    public string convoyName;
 
     public List<ConvoyVehicle> vehicles;
-    
-    public int startPositionId;
-    public int endPositionId;
-    public Convoy(int startPositionId, int endPositionId, ConvoyVehicle[] vehicles)
+    public Convoy(string convoyName, ConvoyVehicle[] vehicles)
     {
+        this.convoyName = convoyName;
         this.vehicles = vehicles.ToList();
-        this.startPositionId = startPositionId;
-        this.endPositionId = endPositionId;
     }
 }
 

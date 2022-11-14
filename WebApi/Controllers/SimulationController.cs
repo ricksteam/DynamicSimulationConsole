@@ -44,40 +44,38 @@ namespace DynamicSimulationConsole.WebApi
         }
 
         [HttpGet("ShortestPath")]
-        public IActionResult GetShortestPath([FromQuery] Guid routeId, [FromQuery] Guid convoyId)
+        public IActionResult GetShortestPath([FromQuery] Guid routeId, [FromQuery] Guid convoyId, [FromQuery] int startNodeId, [FromQuery] int endNodeId)
         {
             _logger.Log(LogLevel.Information, $"[GET]: Simulation/ShortestPath");
             if (!_graphRepository.TryGetGraphById(routeId, out var graph)) return NotFound("ID not found in graph repository");
             if (!_convoyRepository.TryGetConvoyById(convoyId, out var convoy)) return NotFound("ID not found in convoy repository");
                 
             var resultDict = new Dictionary<int, List<int>>();
-            var threads = new Task[convoy.vehicles.Count];
-            for (var i = 0; i < convoy.vehicles.Count; i++)
-            {
-                var vehicle = convoy.vehicles[i];
-                threads[i] = Task.Factory.StartNew(() =>
-                {
-                    var resultPath = ConvoyVehicleThread(vehicle, convoy, graph);
-                    resultDict.Add(vehicle.VehicleId, resultPath?.Select(rp => rp.nodeId).ToList() ?? new List<int>());
-                });
-            }
-            
-            Task.WaitAll(threads);
-            
-            // foreach (var vehicle in convoy.vehicles)
+            // var threads = new Task[convoy.vehicles.Count];
+            // for (var i = 0; i < convoy.vehicles.Count; i++)
             // {
-            //     var resultPath = ConvoyVehicleThread(vehicle, convoy, graph);
-            //     resultDict.Add(vehicle.VehicleId, resultPath?.Select(rp => rp.nodeId).ToList() ?? new List<int>());
+            //     var vehicle = convoy.vehicles[i];
+            //     threads[i] = Task.Factory.StartNew(() =>
+            //     {
+            //         var resultPath = ConvoyVehicleThread(vehicle, convoy, graph);
+            //         resultDict.Add(vehicle.VehicleId, resultPath?.Select(rp => rp.nodeId).ToList() ?? new List<int>());
+            //     });
             // }
+            //
+            // Task.WaitAll(threads);
             
+            foreach (var vehicle in convoy.vehicles)
+            {
+                var resultPath = ConvoyVehicleThread(vehicle, convoy, graph, startNodeId, endNodeId);
+                resultDict.Add(vehicle.VehicleId, resultPath?.Select(rp => rp.nodeId).ToList() ?? new List<int>());
+            }
 
-            
             return Ok(resultDict);
         }
 
-        private List<PathNode> ConvoyVehicleThread(ConvoyVehicle vehicle, Convoy convoy, Graph graph)
+        private List<PathNode> ConvoyVehicleThread(ConvoyVehicle vehicle, Convoy convoy, Graph graph, int startNodeId, int endNodeId)
         {
-            return graph.GetShortestPath(convoy.startPositionId, convoy.endPositionId, vehicle);    
+            return graph.GetShortestPath(startNodeId, endNodeId, vehicle);    
         }
     }
 }

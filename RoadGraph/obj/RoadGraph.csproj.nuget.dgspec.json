@@ -1,33 +1,35 @@
 {
   "format": 1,
   "restore": {
-    "G:\\Graduate Research\\DynamicSimulationConsole\\RoadGraph\\RoadGraph.csproj": {}
+    "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\RoadGraph\\RoadGraph.csproj": {}
   },
   "projects": {
-    "G:\\Graduate Research\\DynamicSimulationConsole\\RoadGraph\\RoadGraph.csproj": {
+    "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\RoadGraph\\RoadGraph.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Graduate Research\\DynamicSimulationConsole\\RoadGraph\\RoadGraph.csproj",
+        "projectUniqueName": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\RoadGraph\\RoadGraph.csproj",
         "projectName": "RoadGraph",
-        "projectPath": "G:\\Graduate Research\\DynamicSimulationConsole\\RoadGraph\\RoadGraph.csproj",
-        "packagesPath": "C:\\Users\\Cyber\\.nuget\\packages\\",
-        "outputPath": "G:\\Graduate Research\\DynamicSimulationConsole\\RoadGraph\\obj\\",
+        "projectPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\RoadGraph\\RoadGraph.csproj",
+        "packagesPath": "C:\\Users\\brandon.lacy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\RoadGraph\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Cyber\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\brandon.lacy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "G:\\Graduate Research\\DynamicSimulationConsole\\Shared\\Shared.csproj": {
-                "projectPath": "G:\\Graduate Research\\DynamicSimulationConsole\\Shared\\Shared.csproj"
+              "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Shared\\Shared.csproj"
               }
             }
           }
@@ -57,26 +59,28 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\Cyber\\.dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "G:\\Graduate Research\\DynamicSimulationConsole\\Shared\\Shared.csproj": {
+    "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Shared\\Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Graduate Research\\DynamicSimulationConsole\\Shared\\Shared.csproj",
+        "projectUniqueName": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Shared\\Shared.csproj",
         "projectName": "Shared",
-        "projectPath": "G:\\Graduate Research\\DynamicSimulationConsole\\Shared\\Shared.csproj",
-        "packagesPath": "C:\\Users\\Cyber\\.nuget\\packages\\",
-        "outputPath": "G:\\Graduate Research\\DynamicSimulationConsole\\Shared\\obj\\",
+        "projectPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Shared\\Shared.csproj",
+        "packagesPath": "C:\\Users\\brandon.lacy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Cyber\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\brandon.lacy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -110,7 +114,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\Cyber\\.dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
