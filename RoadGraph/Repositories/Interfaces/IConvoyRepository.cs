@@ -2,10 +2,8 @@
 
 public interface IConvoyRepository
 {
-    public bool ContainsId(Guid id);
     public bool TryGetConvoyById(Guid id, out Convoy convoy);
-    public Guid AddConvoy(Convoy convoy);
-    public void Clear();
+    public void AddConvoy(Convoy convoy);
     public bool TryDeleteConvoyById(Guid id);
 
     public IEnumerable<Convoy> GetAllConvoys();

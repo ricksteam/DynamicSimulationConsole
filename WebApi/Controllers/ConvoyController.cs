@@ -25,8 +25,8 @@ namespace DynamicSimulationConsole.WebApi
             if (!ModelState.IsValid) return BadRequest(ModelState);
             _logger.Log(LogLevel.Information, $"[POST]: NewConvoy");
             var convoy = new Convoy(input.ConvoyName, input.ConvoyVehicles);
-            var guid = _repository.AddConvoy(convoy);
-            return Ok(guid);
+            _repository.AddConvoy(convoy);
+            return Ok();
         }
         
         [HttpGet("GetAllConvoys")]
