@@ -23,8 +23,7 @@ public class Convoy
 [BsonIgnoreExtraElements]
 public class ConvoyVehicle
 {
-    [BsonId]
-    public Guid VehicleId { get; set; }
+    public int VehicleId { get; set; }
     
     [BsonElement("VehicleName")]
     public string VehicleName  { get; set; }

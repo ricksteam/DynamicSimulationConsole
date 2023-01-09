@@ -24,7 +24,7 @@ namespace DynamicSimulationConsole.WebApi
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
             _logger.Log(LogLevel.Information, $"[POST]: NewConvoy");
-            var convoy = new Convoy(input.ConvoyName, input.ConvoyVehicles);
+            var convoy = new Convoy(input.ConvoyName, input.Vehicles);
             _repository.AddConvoy(convoy);
             return Ok();
         }
@@ -36,6 +36,18 @@ namespace DynamicSimulationConsole.WebApi
             _logger.Log(LogLevel.Information, $"[GET]: GetAllConvoys");
             var convoys = _repository.GetAllConvoys();
             return Ok(JsonConvert.SerializeObject(convoys));
+        }
+        
+        [HttpDelete("DeleteConvoy")]
+        public IActionResult DeleteConvoy([FromQuery] Guid id)
+        {
+            _logger.Log(LogLevel.Information, $"[DELETE]: DeleteConvoy");
+            if (_repository.TryDeleteConvoyById(id))
+            {
+                return Ok();
+            }
+
+            return NotFound();
         }
 
         [HttpGet("GetConvoyById")]
