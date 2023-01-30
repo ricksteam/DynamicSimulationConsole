@@ -1,4 +1,4 @@
-﻿using DynamicSimulationConsole.RoadGraph;
+﻿using DynamicSimulationConsole.DataAccessLayer.Models;
 
 namespace DynamicSimulationConsole.WebApi.Models;
 

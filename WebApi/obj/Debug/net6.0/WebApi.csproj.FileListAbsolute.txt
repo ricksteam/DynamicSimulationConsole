@@ -10,10 +10,6 @@ C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug
 C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\RoadGraph.dll
-C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Shared.dll
-C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\RoadGraph.pdb
-C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Shared.pdb
 C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\WebApi.csproj.AssemblyReference.cache
 C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\WebApi.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\WebApi.AssemblyInfoInputs.cache
@@ -110,3 +106,9 @@ C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\obj\Debug
 C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.WebApi.props
 C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.WebApi.props
 C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\DataAccessLayer.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Services.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\DataAccessLayer.pdb
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Services.pdb
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Shared.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Shared.pdb

@@ -1,0 +1,17 @@
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.deps.json
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.pdb
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\DataAccessLayer\bin\Debug\net6.0\Services.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\DataAccessLayer\bin\Debug\net6.0\Services.pdb
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.AssemblyInfo.cs
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.CopyComplete
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\DataAccessLayer\obj\Debug\net6.0\refint\DataAccessLayer.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.pdb
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\DataAccessLayer\obj\Debug\net6.0\ref\DataAccessLayer.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\DataAccessLayer\bin\Debug\net6.0\Shared.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\DataAccessLayer\bin\Debug\net6.0\Shared.pdb

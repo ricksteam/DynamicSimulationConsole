@@ -353,23 +353,40 @@
           "lib/net6.0/ZstdSharp.dll": {}
         }
       },
-      "RoadGraph/1.0.0": {
+      "DataAccessLayer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "MongoDB.Driver": "2.18.0",
+          "Services": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DataAccessLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DataAccessLayer.dll": {}
+        }
+      },
+      "Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.2-beta2",
           "Shared": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/RoadGraph.dll": {}
+          "bin/placeholder/Services.dll": {}
         },
         "runtime": {
-          "bin/placeholder/RoadGraph.dll": {}
+          "bin/placeholder/Services.dll": {}
         }
       },
       "Shared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.2-beta2"
+        },
         "compile": {
           "bin/placeholder/Shared.dll": {}
         },
@@ -941,10 +958,15 @@
         "zstdsharp.port.nuspec"
       ]
     },
-    "RoadGraph/1.0.0": {
+    "DataAccessLayer/1.0.0": {
       "type": "project",
-      "path": "../RoadGraph/RoadGraph.csproj",
-      "msbuildProject": "../RoadGraph/RoadGraph.csproj"
+      "path": "../DataAccessLayer/DataAccessLayer.csproj",
+      "msbuildProject": "../DataAccessLayer/DataAccessLayer.csproj"
+    },
+    "Services/1.0.0": {
+      "type": "project",
+      "path": "../Services/Services.csproj",
+      "msbuildProject": "../Services/Services.csproj"
     },
     "Shared/1.0.0": {
       "type": "project",
@@ -954,9 +976,9 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "DataAccessLayer >= 1.0.0",
       "Newtonsoft.Json >= 13.0.2-beta2",
-      "RoadGraph >= 1.0.0",
-      "Shared >= 1.0.0",
+      "Services >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
   },
@@ -981,17 +1003,18 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.telerik.com/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\RoadGraph\\RoadGraph.csproj": {
-              "projectPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\RoadGraph\\RoadGraph.csproj"
+            "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\DataAccessLayer\\DataAccessLayer.csproj": {
+              "projectPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\DataAccessLayer\\DataAccessLayer.csproj"
             },
-            "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Shared\\Shared.csproj": {
-              "projectPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Shared\\Shared.csproj"
+            "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Services\\Services.csproj": {
+              "projectPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Services\\Services.csproj"
             }
           }
         }

@@ -8,9 +8,9 @@
     ".NETCoreApp,Version=v6.0": {
       "WebApi/1.0.0": {
         "dependencies": {
+          "DataAccessLayer": "1.0.0",
           "Newtonsoft.Json": "13.0.2-beta2",
-          "RoadGraph": "1.0.0",
-          "Shared": "1.0.0",
+          "Services": "1.0.0",
           "Swashbuckle.AspNetCore": "6.2.3"
         },
         "runtime": {
@@ -192,16 +192,28 @@
           }
         }
       },
-      "RoadGraph/1.0.0": {
+      "DataAccessLayer/1.0.0": {
         "dependencies": {
           "MongoDB.Driver": "2.18.0",
+          "Services": "1.0.0"
+        },
+        "runtime": {
+          "DataAccessLayer.dll": {}
+        }
+      },
+      "Services/1.0.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.2-beta2",
           "Shared": "1.0.0"
         },
         "runtime": {
-          "RoadGraph.dll": {}
+          "Services.dll": {}
         }
       },
       "Shared/1.0.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.2-beta2"
+        },
         "runtime": {
           "Shared.dll": {}
         }
@@ -368,7 +380,12 @@
       "path": "zstdsharp.port/0.6.2",
       "hashPath": "zstdsharp.port.0.6.2.nupkg.sha512"
     },
-    "RoadGraph/1.0.0": {
+    "DataAccessLayer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Services/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
