@@ -24,8 +24,18 @@ public class ConvoyController : ControllerBase
     {
         if (!ModelState.IsValid) return BadRequest(ModelState);
         _logger.Log(LogLevel.Information, $"[POST]: NewConvoy");
-        var convoy = new Convoy(input.ConvoyName, input.Vehicles);
+        var convoy = new Convoy(input.ConvoyName);
         _repository.AddConvoy(convoy);
+        return Ok();
+    }
+    
+    [HttpPost("NewConvoyVehicle")]
+    public IActionResult NewConvoyVehicle([FromBody] ConvoyVehicleInput input)
+    {
+        if (!ModelState.IsValid) return BadRequest(ModelState);
+        _logger.Log(LogLevel.Information, $"[POST]: NewConvoyVehicle");
+        var vehicle = new ConvoyVehicle(input.VehicleName, input.VehicleMaxSpeed, input.VehicleWeight);
+        _repository.AddConvoyVehicle(input.ConvoyId, vehicle);
         return Ok();
     }
 

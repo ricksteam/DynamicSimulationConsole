@@ -8,4 +8,5 @@ public interface IConvoyRepository
     public void AddConvoy(Convoy convoy);
     public bool TryDeleteConvoyById(Guid id);
     public IEnumerable<Convoy> GetAllConvoys();
+    public void AddConvoyVehicle(Guid convoyId, ConvoyVehicle vehicle);
 }

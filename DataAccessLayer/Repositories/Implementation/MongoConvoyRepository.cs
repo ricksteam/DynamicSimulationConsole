@@ -1,4 +1,5 @@
 ﻿using DynamicSimulationConsole.DataAccessLayer.Models;
+using MongoDB.Bson;
 using MongoDB.Driver;
 
 namespace DynamicSimulationConsole.DataAccessLayer.Repositories;
@@ -29,6 +30,22 @@ public class MongoConvoyRepository : IConvoyRepository
         _convoys.InsertOne(convoy);
     }
 
+    public void UpdateConvoy(Convoy newConvoy)
+    {
+        var filter = Builders<Convoy>.Filter.Eq(s => s.ConvoyId, newConvoy.ConvoyId);
+        //var update = Builders<Convoy>.Update.Set(s => s.VehicleCount, newConvoy.VehicleCount);
+        //var result = _convoys.UpdateOne(filter, update);
+        _convoys.ReplaceOne(filter, newConvoy, new ReplaceOptions() { IsUpsert = false });
+    }
+    
+    public async void AddConvoyVehicle(Guid convoyId, ConvoyVehicle vehicle)
+    {
+        vehicle.VehicleId = new Guid();
+        var filter = Builders<Convoy>.Filter.Eq(s => s.ConvoyId, convoyId);
+        var update = Builders<Convoy>.Update.Push(s => s.Vehicles, vehicle);
+        var result =  await _convoys.UpdateOneAsync(filter, update);
+    }
+
     public bool TryDeleteConvoyById(Guid id)
     {
         var filter_id = Builders<Convoy>.Filter.Eq("ConvoyId", id);
@@ -40,5 +57,5 @@ public class MongoConvoyRepository : IConvoyRepository
     {
         return _convoys.AsQueryable();
     }
-    
+
 }
