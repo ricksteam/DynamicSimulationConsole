@@ -367,6 +367,19 @@
           "bin/placeholder/DataAccessLayer.dll": {}
         }
       },
+      "Engines/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Engines.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Engines.dll": {}
+        }
+      },
       "Services/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -963,6 +976,11 @@
       "path": "../DataAccessLayer/DataAccessLayer.csproj",
       "msbuildProject": "../DataAccessLayer/DataAccessLayer.csproj"
     },
+    "Engines/1.0.0": {
+      "type": "project",
+      "path": "../Engines/Engines.csproj",
+      "msbuildProject": "../Engines/Engines.csproj"
+    },
     "Services/1.0.0": {
       "type": "project",
       "path": "../Services/Services.csproj",
@@ -977,6 +995,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "DataAccessLayer >= 1.0.0",
+      "Engines >= 1.0.0",
       "Newtonsoft.Json >= 13.0.2-beta2",
       "Services >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
@@ -1012,6 +1031,9 @@
           "projectReferences": {
             "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\DataAccessLayer\\DataAccessLayer.csproj": {
               "projectPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\DataAccessLayer\\DataAccessLayer.csproj"
+            },
+            "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Engines\\Engines.csproj": {
+              "projectPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Engines\\Engines.csproj"
             },
             "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Services\\Services.csproj": {
               "projectPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Services\\Services.csproj"

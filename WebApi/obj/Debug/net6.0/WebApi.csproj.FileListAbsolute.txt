@@ -112,3 +112,5 @@ C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug
 C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Services.pdb
 C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Shared.dll
 C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Shared.pdb
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Engines.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Engines.pdb

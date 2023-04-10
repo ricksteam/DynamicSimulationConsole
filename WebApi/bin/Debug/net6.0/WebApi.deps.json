@@ -9,6 +9,7 @@
       "WebApi/1.0.0": {
         "dependencies": {
           "DataAccessLayer": "1.0.0",
+          "Engines": "1.0.0",
           "Newtonsoft.Json": "13.0.2-beta2",
           "Services": "1.0.0",
           "Swashbuckle.AspNetCore": "6.2.3"
@@ -201,6 +202,14 @@
           "DataAccessLayer.dll": {}
         }
       },
+      "Engines/1.0.0": {
+        "dependencies": {
+          "Shared": "1.0.0"
+        },
+        "runtime": {
+          "Engines.dll": {}
+        }
+      },
       "Services/1.0.0": {
         "dependencies": {
           "Newtonsoft.Json": "13.0.2-beta2",
@@ -381,6 +390,11 @@
       "hashPath": "zstdsharp.port.0.6.2.nupkg.sha512"
     },
     "DataAccessLayer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Engines/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
