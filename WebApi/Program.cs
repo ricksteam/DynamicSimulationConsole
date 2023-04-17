@@ -26,6 +26,7 @@ var osmData = new OsmData
 
 builder.Services.AddSingleton<OsmData>(osmData);
 builder.Services.AddSingleton<IConvoyRepository, MongoConvoyRepository>();
+builder.Services.AddSingleton<IRouteRepository, MongoRouteRepository>();
 
 builder.Services.AddCors();
 
