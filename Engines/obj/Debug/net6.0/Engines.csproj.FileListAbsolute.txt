@@ -13,3 +13,5 @@ C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\Engines\obj\Debu
 C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\Engines\obj\Debug\net6.0\refint\Engines.dll
 C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\Engines\obj\Debug\net6.0\Engines.pdb
 C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\Engines\obj\Debug\net6.0\ref\Engines.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\Engines\bin\Debug\net6.0\Services.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\Engines\bin\Debug\net6.0\Services.pdb

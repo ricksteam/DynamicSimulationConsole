@@ -7,8 +7,6 @@ namespace Engines;
 
 public class OsmParser
 {
-
-
     public static List<OsmNode> ExtractNodesAndBridges(string osmFilePath, out List<OsmBridge> bridges)
     {
         bridges = new List<OsmBridge>();

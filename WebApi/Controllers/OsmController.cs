@@ -1,4 +1,7 @@
 ﻿using System.Globalization;
+using OsmSharp;
+using OsmSharp.Complete;
+using OsmSharp.Streams;
 using Shared.Models;
 
 namespace DynamicSimulationConsole.WebApi;
@@ -12,7 +15,8 @@ using System.Linq;
 public class OsmController : ControllerBase
 {
     private readonly OsmData _osmData;
-
+    private const double COORDINATE_PRECISION = 0.000001;
+    
     public OsmController(OsmData osmData)
     {
         _osmData = osmData;
@@ -43,6 +47,58 @@ public class OsmController : ControllerBase
     {
         return Ok(_osmData.Bridges);
     }
+
+
+    [HttpPost("GetOsmNodes")]
+    public ActionResult<IEnumerable<Node>> GetOsmNodes([FromBody] LatLng[] coordinates)
+    {
+        var coordinateSet = new HashSet<LatLng>(coordinates);
+        var nodes = new List<Node>();
+        using (var fileStream = System.IO.File.OpenRead(Directory.GetCurrentDirectory() + "\\..\\OSM\\NE-merge-v1-1-1.pbf"))
+        {
+            using (var source = new PBFOsmStreamSource(fileStream))
+            {
+                foreach (var osmGeo in source)
+                {
+                    if (osmGeo.Type == OsmGeoType.Node)
+                    {
+                        var node = osmGeo as Node;
+                        if (node == null) continue;
+                        var nodeCoordinate = new LatLng()
+                        {
+                            lat = node.Latitude ?? 0,
+                            lon = node.Longitude ?? 0
+                        };
+
+                        foreach (var coordinate in coordinates)
+                        {
+                            if (Math.Abs(nodeCoordinate.lat - coordinate.lat) <= COORDINATE_PRECISION &&
+                                    Math.Abs(nodeCoordinate.lon - coordinate.lon) <= COORDINATE_PRECISION)
+                            {
+                                nodes.Add(node);
+                                coordinateSet.Remove(nodeCoordinate);
+                                if(coordinateSet.Count == 0) break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // foreach (var coord in coordinates)
+        // {
+        //     // if (!(double.TryParse(coord.lat, out var latitude) && double.TryParse(coord.lon, out var longitude)))
+        //     // {
+        //     //     return BadRequest("Invalid latitude or longitude");
+        //     // }
+        //     var node = _osmData.Nodes.FirstOrDefault(n =>
+        //         Math.Abs(n.Latitude - coord.lat) <= COORDINATE_PRECISION &&
+        //         Math.Abs(n.Longitude - coord.lon) <= COORDINATE_PRECISION);
+        //     response.Add(node);
+        // }
+        return nodes;
+    }
+
+
     
     [HttpGet("Nodes/{id}")]
     public ActionResult<OsmNode> GetNodeById(long id)
@@ -56,4 +112,5 @@ public class OsmController : ControllerBase
 
         return Ok(node);
     }
+    
 }

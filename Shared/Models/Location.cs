@@ -2,10 +2,14 @@
 
 namespace Shared.Models;
 
-public class Location
+public class LatLng
 {
-    public float lat { get; set; }
-    public float lon { get; set; }
+    public double lat { get; set; }
+    public double lon { get; set; }
+}
+
+public class Location : LatLng
+{
     public string? type { get; set; }
 }
 

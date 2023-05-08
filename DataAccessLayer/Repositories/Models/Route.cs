@@ -1,4 +1,5 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
+using Shared.Models;
 
 namespace DynamicSimulationConsole.DataAccessLayer.Models;
 
@@ -11,8 +12,16 @@ public class Route
     [BsonElement("RouteName")]
     public string RouteName { get; set; }
     
-    public Route(string routeName)
+    [BsonElement("StartCoordinate")]
+    public LatLng StartCoordinate { get; set; }
+    
+    [BsonElement("EndCoordinate")]
+    public LatLng EndCoordinate { get; set; }
+    
+    public Route(string routeName, LatLng startCoordinate, LatLng endCoordinate)
     {
         RouteName = routeName;
+        StartCoordinate = startCoordinate;
+        EndCoordinate = endCoordinate;
     }
 }

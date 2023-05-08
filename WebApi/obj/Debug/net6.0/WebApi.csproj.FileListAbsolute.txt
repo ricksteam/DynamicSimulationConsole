@@ -114,3 +114,7 @@ C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug
 C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Shared.pdb
 C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Engines.dll
 C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Engines.pdb
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\OsmSharp.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\protobuf-net.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\protobuf-net.Core.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\System.Text.Json.dll
