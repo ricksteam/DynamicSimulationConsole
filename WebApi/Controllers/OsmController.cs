@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using Engines;
 using OsmSharp;
 using OsmSharp.Complete;
 using OsmSharp.Streams;
@@ -48,6 +49,32 @@ public class OsmController : ControllerBase
         return Ok(_osmData.Bridges);
     }
 
+   
+
+    [HttpPost("GetRouteBridges")]
+    public ActionResult<IEnumerable<OsmBridge>> GetRouteBridges([FromBody] LatLng[] coordinates)
+    {
+        const double distanceThreshold = 0.001;
+        var bridgeList = new List<OsmBridge>();
+
+        for (var i = 0; i < coordinates.Length - 1; i++)
+        {
+            foreach (var bridge in _osmData.Bridges)
+            {
+                foreach (var node in bridge.Nodes)
+                {
+                    var distance = GeoEngine.CalculateMinimumDistance(coordinates[i], coordinates[i + 1], node);
+                    if (distance <= distanceThreshold)
+                    {
+                        bridgeList.Add(bridge);
+                        break;
+                    }
+                }
+            }
+        }
+
+        return bridgeList;
+    }
 
     [HttpPost("GetOsmNodes")]
     public ActionResult<IEnumerable<Node>> GetOsmNodes([FromBody] LatLng[] coordinates)

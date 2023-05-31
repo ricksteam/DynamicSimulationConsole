@@ -24,6 +24,13 @@ var osmData = new OsmData
     Bridges = bridges
 };
 
+// var bridges = PbiParser.GetBridges(Directory.GetCurrentDirectory() + "\\..\\OSM\\NE-merge-v1-1-1.pbf");
+// var osmData = new OsmData()
+// {
+//     Nodes = new List<OsmNode>(),
+//     Bridges = bridges
+// };
+
 builder.Services.AddSingleton<OsmData>(osmData);
 builder.Services.AddSingleton<IConvoyRepository, MongoConvoyRepository>();
 builder.Services.AddSingleton<IRouteRepository, MongoRouteRepository>();

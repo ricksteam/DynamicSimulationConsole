@@ -1,4 +1,5 @@
-﻿using DynamicSimulationConsole.DataAccessLayer.Repositories;
+﻿using System.Net;
+using DynamicSimulationConsole.DataAccessLayer.Repositories;
 using DynamicSimulationConsole.DataAccessLayer.Models;
 using DynamicSimulationConsole.Services;
 using DynamicSimulationConsole.Services.Models;
@@ -31,8 +32,18 @@ public class ValhallaController : ControllerBase
     public async Task<IActionResult> GetValhallaRoute([FromBody] ValhallaRouteParameters input)
     {
         if (!ModelState.IsValid) return BadRequest(ModelState);
-        _logger.Log(LogLevel.Information, $"[POST]: GetRoute");
-        var route = await _valhallaClient.GetRoute(input);
-        return Ok(route);
+        _logger.Log(LogLevel.Information, $"[POST]: GetValhallaRoute");
+        try
+        {
+            var route = await _valhallaClient.GetRoute(input);
+            return Ok(route);
+        }
+        catch (HttpRequestException ex)
+        {
+            var error = Content("Valhalla API is down or not responding!");
+            HttpContext.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+            return error;
+        }
+
     }
 }

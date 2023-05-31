@@ -11,4 +11,9 @@
         <ProjectReference Include="..\Shared\Shared.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="GeoCoordinate.NetCore" Version="1.0.0.1" />
+      <PackageReference Include="OsmSharp" Version="7.0.0-pre022" />
+    </ItemGroup>
+
 </Project>
