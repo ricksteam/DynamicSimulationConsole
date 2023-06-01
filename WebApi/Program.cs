@@ -13,9 +13,6 @@ builder.Services.AddControllers().AddJsonOptions((options) => options.JsonSerial
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//var osmDocument = XDocument.Load(Directory.GetCurrentDirectory() + "\\..\\OSM\\NE-Merge-v1-1.osm");
-//var nodes = OsmParser.ExtractNodes(osmDocument);
-//var bridges = OsmParser.ExtractBridges(osmDocument, nodes);
 var nodes = OsmParser.ExtractNodesAndBridges(Directory.GetCurrentDirectory() + "\\..\\OSM\\NE-Merge-v1-1.osm",
     out var bridges);
 var osmData = new OsmData
