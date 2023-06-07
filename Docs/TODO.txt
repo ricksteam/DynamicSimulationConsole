@@ -1,0 +1,3 @@
+Set of convoys that have a MLC number
+Need to go from A to B
+What are the different routes they can take and the costs for each route

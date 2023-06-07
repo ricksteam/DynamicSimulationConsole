@@ -24,14 +24,20 @@ public class ValhallaClient
         return newHttpClient;
     }
 
-    public async Task<ValhallaRoute> GetRoute(ValhallaRouteParameters parameters)
+    public async Task<ValhallaRoute[]> GetRoute(ValhallaRouteParameters parameters)
     {
         var json = JsonConvert.SerializeObject(parameters);
         var encodedJson = WebUtility.UrlEncode(json);
         var result = await _httpClient.GetAsync($"route?json={encodedJson}");
         result.EnsureSuccessStatusCode();
-        var data = await result.Content.ReadFromJsonAsync<ValhallaRoute>();
-        return data;
-        //var result = await _httpClient.GetAsync("route?json=");
+        var data = await result.Content.ReadFromJsonAsync<ValhallaResponse>();
+
+        var returnList = new List<ValhallaRoute>()
+        {
+            new(data.trip)
+        };
+        returnList.AddRange(data.alternates);
+        
+        return returnList.ToArray();
     }
 }

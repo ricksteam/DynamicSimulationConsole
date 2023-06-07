@@ -54,7 +54,7 @@ public class OsmController : ControllerBase
     [HttpPost("GetRouteBridges")]
     public ActionResult<IEnumerable<OsmBridge>> GetRouteBridges([FromBody] LatLng[] coordinates)
     {
-        const double distanceThreshold = 0.001;
+        const double distanceThreshold = 0.01;
         var bridgeList = new List<OsmBridge>();
 
         for (var i = 0; i < coordinates.Length - 1; i++)

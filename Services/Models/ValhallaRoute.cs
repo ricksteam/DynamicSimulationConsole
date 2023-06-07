@@ -2,9 +2,20 @@
 
 namespace DynamicSimulationConsole.Services.Models;
 
+
+public class ValhallaResponse
+{
+    public ValhallaTrip trip { get; set; }
+    public ValhallaRoute[] alternates { get; set; }
+}
 public class ValhallaRoute
 {
     public ValhallaTrip trip { get; set; }
+
+    public ValhallaRoute(ValhallaTrip trip)
+    {
+        this.trip = trip;
+    }
 }
 
 public class ValhallaTrip
@@ -16,16 +27,4 @@ public class ValhallaTrip
 public class ValhallaLeg
 {
     public string shape { get; set; }
-}
-
-public class ValhallaRouteNode
-{
-    public bool isBridge { get; set; }
-    public LocationResponse location { get; set; }
-}
-
-public class ValhallaResponse
-{
-    public string shape { get; set; }
-    public ValhallaRouteNode[] nodes { get; set; }
 }
