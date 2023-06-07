@@ -1,16 +1,36 @@
 using System.Text.Json.Serialization;
-using DynamicSimulationConsole.RoadGraph.Repositories;
+using System.Xml.Linq;
+using DynamicSimulationConsole.DataAccessLayer.Repositories;
+using Engines;
+using Shared.Models;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers().AddJsonOptions((options) => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddSingleton<IRoadGraphRepository, InMemoryRoadGraphRepository>();
-builder.Services.AddSingleton<IConvoyRepository, InMemoryConvoyRepository>();
+
+var nodes = OsmParser.ExtractNodesAndBridges(Directory.GetCurrentDirectory() + "\\..\\OSM\\NE-Merge-v1-1.osm",
+    out var bridges);
+var osmData = new OsmData
+{
+    Nodes = nodes,
+    Bridges = bridges
+};
+
+// var bridges = PbiParser.GetBridges(Directory.GetCurrentDirectory() + "\\..\\OSM\\NE-merge-v1-1-1.pbf");
+// var osmData = new OsmData()
+// {
+//     Nodes = new List<OsmNode>(),
+//     Bridges = bridges
+// };
+
+builder.Services.AddSingleton<OsmData>(osmData);
+builder.Services.AddSingleton<IConvoyRepository, MongoConvoyRepository>();
+builder.Services.AddSingleton<IRouteRepository, MongoRouteRepository>();
 
 builder.Services.AddCors();
 

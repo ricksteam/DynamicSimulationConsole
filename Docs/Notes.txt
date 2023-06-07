@@ -1,0 +1,35 @@
+The Military Load Classification (MLC) is a system used by NATO and the US Department of Defense to classify bridges and vehicles based on their load-carrying capacity.
+This system is used to ensure that vehicles don't exceed the weight capacity of the bridges they cross.
+
+MLC assignments
+
+	Vehicles are assigned MLC numbers that represent the size of the vehicle and the loading effects that it has on a bridge. The MLC of a vehicle depends on a combination of factors, including 
+	gross weight, number of axles, axle spacing, axle width, and weight distribution to the axles. It's usually determined by the manufacturer and included in the vehicle's specifications. 
+	There isn't a "formula" to calculate the MLC rating of a vehicle, because it's not calculated from other parameters - it's just a measure of the vehicle's total weight under typical fully loaded conditions.
+	The MLC rating system includes two types of ratings for vehicles: normal and caution. 
+		The normal MLC rating is for when the vehicle is moving at a steady speed not exceeding 10 mph. 
+		The caution MLC rating is for when the vehicle is moving at a higher speed, or if it's accelerating or decelerating.
+
+
+
+	Bridges are assigned MLC numbers that represent the largest vehicle classification that the bridge can safely support as part of an occasional convoy with the vehicles spaced 100 ft apart 
+	and traveling at a maximum speed of 25 miles per hour.
+
+
+
+
+For convoys, the MLC rating is usually determined by the vehicle with the highest MLC rating in the convoy. 
+This is because the convoy can only move as fast and cross bridges that are rated for the heaviest vehicle in the convoy.
+
+However, it's also possible to calculate a convoy's MLC rating based on the sum of the MLC ratings of the vehicles in the convoy, 
+if the vehicles are close enough together that they might all be on a bridge at the same time. 
+This is a more conservative approach and may limit the convoy's movement options.
+
+
+As long as the MLC of the largest vehicle in a convoy does not exceed the MLC of the bridge, the 
+bridge can safely withstand occasional use by the convoy.
+
+
+The MLC values differ for wheeled and tracked vehicles and for one and two-lane operation. Up to four MLC values can be assigned to a single bridge. These procedures assume that the bridge superstructure is the 
+controlling or limiting feature in bridge classification. The substructure, which includes footings, abutments, piers, piles, posts, and other supports, is usually overdesigned to compensate for 
+uncertainties in the underlying soil properties. 

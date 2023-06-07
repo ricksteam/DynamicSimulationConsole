@@ -10,10 +10,6 @@ C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug
 C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\RoadGraph.dll
-C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Shared.dll
-C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\RoadGraph.pdb
-C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Shared.pdb
 C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\WebApi.csproj.AssemblyReference.cache
 C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\WebApi.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\WebApi.AssemblyInfoInputs.cache
@@ -94,3 +90,32 @@ F:\Graduate Research\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\refint\Web
 F:\Graduate Research\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\WebApi.pdb
 F:\Graduate Research\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\WebApi.genruntimeconfig.cache
 F:\Graduate Research\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\ref\WebApi.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\DnsClient.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\MongoDB.Bson.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\MongoDB.Driver.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\MongoDB.Driver.Core.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\MongoDB.Libmongocrypt.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\SharpCompress.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Snappier.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\ZstdSharp.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\runtimes\linux\native\libmongocrypt.so
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\runtimes\win\native\mongocrypt.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\staticwebassets\msbuild.WebApi.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\staticwebassets\msbuild.build.WebApi.props
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.WebApi.props
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.WebApi.props
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\DataAccessLayer.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Services.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\DataAccessLayer.pdb
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Services.pdb
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Shared.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Shared.pdb
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Engines.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Engines.pdb
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\OsmSharp.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\protobuf-net.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\protobuf-net.Core.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\GeoCoordinate.NetCore.dll

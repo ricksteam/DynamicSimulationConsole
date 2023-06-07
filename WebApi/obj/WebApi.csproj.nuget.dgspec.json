@@ -4,14 +4,14 @@
     "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\WebApi\\WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\RoadGraph\\RoadGraph.csproj": {
+    "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\DataAccessLayer\\DataAccessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\RoadGraph\\RoadGraph.csproj",
-        "projectName": "RoadGraph",
-        "projectPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\RoadGraph\\RoadGraph.csproj",
+        "projectUniqueName": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\DataAccessLayer\\DataAccessLayer.csproj",
+        "projectName": "DataAccessLayer",
+        "projectPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\DataAccessLayer\\DataAccessLayer.csproj",
         "packagesPath": "C:\\Users\\brandon.lacy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\RoadGraph\\obj\\",
+        "outputPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\DataAccessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\brandon.lacy\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -22,7 +22,147 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.telerik.com/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Services\\Services.csproj": {
+                "projectPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Services\\Services.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.18.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Engines\\Engines.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Engines\\Engines.csproj",
+        "projectName": "Engines",
+        "projectPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Engines\\Engines.csproj",
+        "packagesPath": "C:\\Users\\brandon.lacy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Engines\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\brandon.lacy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.telerik.com/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Services\\Services.csproj": {
+                "projectPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Services\\Services.csproj"
+              },
+              "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Shared\\Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "GeoCoordinate.NetCore": {
+              "target": "Package",
+              "version": "[1.0.0.1, )"
+            },
+            "OsmSharp": {
+              "target": "Package",
+              "version": "[7.0.0-pre022, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Services\\Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Services\\Services.csproj",
+        "projectName": "Services",
+        "projectPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Services\\Services.csproj",
+        "packagesPath": "C:\\Users\\brandon.lacy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\brandon.lacy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.telerik.com/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
@@ -43,6 +183,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.2-beta2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -59,7 +205,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -81,7 +227,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.telerik.com/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
@@ -98,6 +245,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.2-beta2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -114,7 +267,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -136,17 +289,21 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.telerik.com/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\RoadGraph\\RoadGraph.csproj": {
-                "projectPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\RoadGraph\\RoadGraph.csproj"
+              "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\DataAccessLayer\\DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\DataAccessLayer\\DataAccessLayer.csproj"
               },
-              "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Shared\\Shared.csproj": {
-                "projectPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Shared\\Shared.csproj"
+              "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Engines\\Engines.csproj": {
+                "projectPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Engines\\Engines.csproj"
+              },
+              "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Services\\Services.csproj": {
+                "projectPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Services\\Services.csproj"
               }
             }
           }
@@ -164,6 +321,10 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.2-beta2, )"
+            },
+            "OsmSharp": {
+              "target": "Package",
+              "version": "[7.0.0-pre022, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -189,7 +350,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

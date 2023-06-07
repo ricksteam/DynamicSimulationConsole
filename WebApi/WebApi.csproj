@@ -9,12 +9,14 @@
 
     <ItemGroup>
         <PackageReference Include="Newtonsoft.Json" Version="13.0.2-beta2" />
+        <PackageReference Include="OsmSharp" Version="7.0.0-pre022" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\RoadGraph\RoadGraph.csproj" />
-      <ProjectReference Include="..\Shared\Shared.csproj" />
+      <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj" />
+      <ProjectReference Include="..\Engines\Engines.csproj" />
+      <ProjectReference Include="..\Services\Services.csproj" />
     </ItemGroup>
 
 </Project>
