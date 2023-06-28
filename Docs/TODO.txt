@@ -1,3 +1,11 @@
-Set of convoys that have a MLC number
+Set of convoy vehicles that have a MLC number
 Need to go from A to B
 What are the different routes they can take and the costs for each route
+
+
+Combine Route Fetch and Bridge Parse into 1 API call (for easy/efficiency)
+Re-work the algorithm that finds bridges in a route to be more accurate.
+Look into ambush avoidance algorithms and solutions.
+Build an example algorithm that roughly follows Dr. Ricks game diagram. 
+Fork Tony's code (or start from scratch) to implement the algorithm for a POC
+??? Maybe connect ambush avoidance to UI somehow that allows for human/ai players
