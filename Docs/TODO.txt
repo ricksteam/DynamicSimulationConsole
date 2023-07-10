@@ -9,3 +9,10 @@ Look into ambush avoidance algorithms and solutions.
 Build an example algorithm that roughly follows Dr. Ricks game diagram. 
 Fork Tony's code (or start from scratch) to implement the algorithm for a POC
 ??? Maybe connect ambush avoidance to UI somehow that allows for human/ai players
+
+
+ASK WILL TO ADD BRIDGE WAY ID TO ALL NODES
+Current update is combine all endpoints into 1 as we need all info:
+	Valhalla routes and trip polyline parsing
+	OSM/NBI bridge data from routes
+	Ambush avoidance scoring

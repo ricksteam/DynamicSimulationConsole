@@ -386,35 +386,38 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Cyber\\.nuget\\packages\\": {}
+    "C:\\Users\\brandon.lacy\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Graduate Research\\DynamicSimulationConsole\\Engines\\Engines.csproj",
+      "projectUniqueName": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Engines\\Engines.csproj",
       "projectName": "Engines",
-      "projectPath": "D:\\Graduate Research\\DynamicSimulationConsole\\Engines\\Engines.csproj",
-      "packagesPath": "C:\\Users\\Cyber\\.nuget\\packages\\",
-      "outputPath": "D:\\Graduate Research\\DynamicSimulationConsole\\Engines\\obj\\",
+      "projectPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Engines\\Engines.csproj",
+      "packagesPath": "C:\\Users\\brandon.lacy\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Engines\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Cyber\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\brandon.lacy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "https://api.nuget.org/v3/index.json": {}
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.telerik.com/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Graduate Research\\DynamicSimulationConsole\\Services\\Services.csproj": {
-              "projectPath": "D:\\Graduate Research\\DynamicSimulationConsole\\Services\\Services.csproj"
+            "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Services\\Services.csproj": {
+              "projectPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Services\\Services.csproj"
             },
-            "D:\\Graduate Research\\DynamicSimulationConsole\\Shared\\Shared.csproj": {
-              "projectPath": "D:\\Graduate Research\\DynamicSimulationConsole\\Shared\\Shared.csproj"
+            "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Shared\\Shared.csproj": {
+              "projectPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Shared\\Shared.csproj"
             }
           }
         }
@@ -454,7 +457,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\Cyber\\.dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

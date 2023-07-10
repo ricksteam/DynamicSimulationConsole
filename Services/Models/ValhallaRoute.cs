@@ -11,7 +11,7 @@ public class ValhallaResponse
 public class ValhallaRoute
 {
     public ValhallaTrip trip { get; set; }
-
+    
     public ValhallaRoute(ValhallaTrip trip)
     {
         this.trip = trip;

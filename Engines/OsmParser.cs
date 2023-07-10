@@ -11,110 +11,121 @@ public class OsmParser
     {
         bridges = new List<OsmBridge>();
         var nodes = new List<OsmNode>();
+        var nodesLookup = new Dictionary<long, OsmNode>();
 
-        Dictionary<long, OsmNode> nodesLookup = new Dictionary<long, OsmNode>();
+        using var reader = XmlReader.Create(osmFilePath);
 
-        using (XmlReader reader = XmlReader.Create(osmFilePath))
+        OsmBridge currentBridge = null;
+        List<long> currentNodeRefs = null;
+
+        while (reader.Read())
         {
-            OsmBridge currentBridge = null;
-            List<long> currentNodeRefs = null;
-
-            while (reader.Read())
+            if (reader.NodeType == XmlNodeType.Element)
             {
-                if (reader.NodeType == XmlNodeType.Element)
+                switch (reader.Name)
                 {
-                    if (reader.Name == "node")
-                    {
-                        long id = long.Parse(reader.GetAttribute("id"));
-                        double lat = double.Parse(reader.GetAttribute("lat"), CultureInfo.InvariantCulture);
-                        double lon = double.Parse(reader.GetAttribute("lon"), CultureInfo.InvariantCulture);
-
-                        var node = new OsmNode { Id = id, Latitude = lat, Longitude = lon };
-                        nodesLookup[id] = node;
-                        nodes.Add(node);
-                    }
-                    else if (reader.Name == "way")
-                    {
-                        currentBridge = new OsmBridge { Id = long.Parse(reader.GetAttribute("id")) };
+                    case "node":
+                        ProcessNode(reader, nodes, nodesLookup);
+                        break;
+                    case "way":
+                        currentBridge = ProcessWay(reader);
                         currentNodeRefs = new List<long>();
-                    }
-                    else if (reader.Name == "nd" && currentBridge != null)
-                    {
-                        currentNodeRefs.Add(long.Parse(reader.GetAttribute("ref")));
-                    }
-                    else if (reader.Name == "tag" && currentBridge != null)
-                    {
-                        string key = reader.GetAttribute("k");
-                        string value = reader.GetAttribute("v");
-
-                        if (key == "bridge" && value == "yes")
-                        {
-                            currentBridge.Nodes = currentNodeRefs.Select(id => nodesLookup[id]).ToList();
-                            bridges.Add(currentBridge);
-                        }
-                        else if (key == "name")
-                        {
-                            currentBridge.Name = value;
-                        }
-                    }
+                        break;
+                    case "nd":
+                        ProcessNd(reader, currentBridge, currentNodeRefs);
+                        break;
+                    case "tag":
+                        ProcessTag(reader, currentBridge, bridges, nodesLookup, currentNodeRefs);
+                        break;
                 }
-                else if (reader.NodeType == XmlNodeType.EndElement && reader.Name == "way")
-                {
-                    currentBridge = null;
-                    currentNodeRefs = null;
-                }
+            }
+            else if (reader.NodeType == XmlNodeType.EndElement && reader.Name == "way")
+            {
+                currentBridge = null;
+                currentNodeRefs = null;
             }
         }
 
         return nodes;
     }
 
-    public static List<OsmNode> ExtractNodes(XDocument osmDocument)
+    private static void ProcessNode(XmlReader reader, List<OsmNode> nodes, Dictionary<long, OsmNode> nodesLookup)
     {
-        Console.WriteLine("Parsing Nodes...");
-        List<OsmNode> nodes = new List<OsmNode>();
+        var id = long.Parse(reader.GetAttribute("id") ?? string.Empty);
+        var lat = ParseCoordinate(reader.GetAttribute("lat"));
+        var lon = ParseCoordinate(reader.GetAttribute("lon"));
 
-        foreach (XElement node in osmDocument.Descendants("node"))
-        {
-            nodes.Add(new OsmNode
-            {
-                Id = long.Parse(node.Attribute("id").Value),
-                Latitude = double.Parse(node.Attribute("lat").Value, CultureInfo.InvariantCulture),
-                Longitude = double.Parse(node.Attribute("lon").Value, CultureInfo.InvariantCulture)
-            });
-        }
-        Console.WriteLine("Completed Parsing Nodes!");
-        return nodes;
+        var node = new OsmNode { Id = id, Latitude = lat, Longitude = lon };
+        nodesLookup[id] = node;
+        nodes.Add(node);
     }
-    
-    public static List<OsmBridge> ExtractBridges(XDocument osmDocument, List<OsmNode> nodes)
+
+    private static OsmBridge ProcessWay(XmlReader reader)
     {
-        Console.WriteLine("Parsing Bridges...");
-        var bridgeWays = osmDocument.Descendants("way")
-            .Where(w => w.Elements("tag").Any(t => t.Attribute("k").Value == "bridge" && t.Attribute("v").Value == "yes"))
-            .ToList();
-
-        var bridges = new List<OsmBridge>();
-
-        foreach (var bridgeWay in bridgeWays)
-        {
-            var nodeRefs = bridgeWay.Elements("nd")
-                .Select(nd => long.Parse(nd.Attribute("ref").Value))
-                .ToList();
-
-            var bridgeNodes = nodes.Where(n => nodeRefs.Contains(n.Id)).ToList();
-
-            var nameTag = bridgeWay.Elements("tag").FirstOrDefault(t => t.Attribute("k").Value == "name");
-            string bridgeName = nameTag?.Attribute("v").Value ?? "Unnamed Bridge";
-
-            bridges.Add(new OsmBridge
-            {
-                Id = long.Parse(bridgeWay.Attribute("id").Value),
-                Name = bridgeName,
-                Nodes = bridgeNodes
-            });
-        }
-        Console.WriteLine("Completed Parsing Bridges!");
-        return bridges;
+        return new OsmBridge { Id = long.Parse(reader.GetAttribute("id") ?? string.Empty) };
     }
+
+    private static void ProcessNd(XmlReader reader, OsmBridge currentBridge, List<long> currentNodeRefs)
+    {
+        if (currentBridge == null) return;
+        currentNodeRefs.Add(long.Parse(reader.GetAttribute("ref") ?? string.Empty));
+    }
+
+    private static void ProcessTag(XmlReader reader, OsmBridge currentBridge, ICollection<OsmBridge> bridges,
+        IReadOnlyDictionary<long, OsmNode> nodesLookup, IEnumerable<long> currentNodeRefs)
+    {
+        if (currentBridge == null) return;
+
+        var key = reader.GetAttribute("k");
+        var value = reader.GetAttribute("v");
+
+        if (key == null || value == null) return;
+
+        if (key == "bridge" && value == "yes")
+        {
+            currentBridge.Nodes = currentNodeRefs.Select(id => nodesLookup[id]).ToList();
+            bridges.Add(currentBridge);
+        }
+        else if (key == "name")
+        {
+            currentBridge.Name = value;
+        }
+        else if (key == "nbi" && value == "yes")
+        {
+            currentBridge.Nbi = value;
+        }
+        else if (currentBridge?.Nbi == "yes")
+        {
+            if (value == "N")
+                value = "0";
+            
+            switch (key)
+            {
+                case "nbi:super-cond":
+                    currentBridge.SuperCondition = double.Parse(value);
+                    break;
+                case "nbi:sub-cond":
+                    currentBridge.SubCondition = double.Parse(value);
+                    break;
+                case "nbi:op-rating":
+                    currentBridge.OperationRating = double.Parse(value);
+                    break;
+                case "nbi:op-method-code":
+                    currentBridge.OperationMethodCode = int.Parse(value);
+                    break;
+                case "nbi:deck-rating":
+                    currentBridge.DeckRating = double.Parse(value);
+                    break;
+                case "nbi:inv-rating":
+                    currentBridge.InventoryRating = double.Parse(value);
+                    break;
+            }
+        }
+    }
+
+    private static double ParseCoordinate(string coordinate)
+    {
+        return double.Parse(coordinate, CultureInfo.InvariantCulture);
+    }
+
 }

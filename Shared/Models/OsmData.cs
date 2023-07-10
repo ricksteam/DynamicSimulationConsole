@@ -17,6 +17,12 @@ public class OsmBridge
 {
     public long Id { get; set; }
     public string Name { get; set; }
+    public string Nbi { get; set; }
     public List<OsmNode> Nodes { get; set; }
-    public Dictionary<string, string> Tags { get; set; }
+    public double SuperCondition { get; set; }
+    public double SubCondition { get; set; }
+    public double DeckRating { get; set; }
+    public double InventoryRating { get; set; }
+    public double OperationRating { get; set; }
+    public int OperationMethodCode { get; set; }
 }

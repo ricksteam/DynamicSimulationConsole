@@ -42,21 +42,18 @@ public class OsmController : ControllerBase
         return Ok(nodes);
     }
     
-    
     [HttpGet("GetAllBridges")]
     public ActionResult<IEnumerable<OsmBridge>> GetAllBridges()
     {
         return Ok(_osmData.Bridges);
     }
-
-   
-
+    
     [HttpPost("GetRouteBridges")]
     public ActionResult<IEnumerable<OsmBridge>> GetRouteBridges([FromBody] LatLng[] coordinates)
     {
         const double distanceThreshold = 0.1;
         var bridgeList = new List<OsmBridge>();
-
+    
         for (var i = 0; i < coordinates.Length - 1; i++)
         {
             foreach (var bridge in _osmData.Bridges)
@@ -72,7 +69,7 @@ public class OsmController : ControllerBase
                 }
             }
         }
-
+    
         return bridgeList;
     }
 
