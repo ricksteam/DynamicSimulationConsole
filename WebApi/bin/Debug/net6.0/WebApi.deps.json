@@ -123,17 +123,6 @@
           }
         }
       },
-      "NetTopologySuite/2.5.0": {
-        "dependencies": {
-          "System.Memory": "4.5.4"
-        },
-        "runtime": {
-          "lib/netstandard2.0/NetTopologySuite.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.0.0.0"
-          }
-        }
-      },
       "Newtonsoft.Json/13.0.2-beta2": {
         "runtime": {
           "lib/net6.0/Newtonsoft.Json.dll": {
@@ -228,7 +217,6 @@
         }
       },
       "System.Buffers/4.5.1": {},
-      "System.Memory/4.5.4": {},
       "System.Runtime.CompilerServices.Unsafe/6.0.0": {},
       "System.Security.AccessControl/5.0.0": {
         "dependencies": {
@@ -274,7 +262,6 @@
       "Engines/1.0.0": {
         "dependencies": {
           "GeoCoordinate.NetCore": "1.0.0.1",
-          "NetTopologySuite": "2.5.0",
           "OsmSharp": "7.0.0-pre022",
           "Services": "1.0.0",
           "Shared": "1.0.0"
@@ -385,13 +372,6 @@
       "path": "mongodb.libmongocrypt/1.6.0",
       "hashPath": "mongodb.libmongocrypt.1.6.0.nupkg.sha512"
     },
-    "NetTopologySuite/2.5.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-5/+2O2ADomEdUn09mlSigACdqvAf0m/pVPGtIPEPQWnyrVykYY0NlfXLIdkMgi41kvH9kNrPqYaFBTZtHYH7Xw==",
-      "path": "nettopologysuite/2.5.0",
-      "hashPath": "nettopologysuite.2.5.0.nupkg.sha512"
-    },
     "Newtonsoft.Json/13.0.2-beta2": {
       "type": "package",
       "serviceable": true,
@@ -468,13 +448,6 @@
       "sha512": "sha512-Rw7ijyl1qqRS0YQD/WycNst8hUUMgrMH4FCn1nNm27M4VxchZ1js3fVjQaANHO5f3sN4isvP4a+Met9Y4YomAg==",
       "path": "system.buffers/4.5.1",
       "hashPath": "system.buffers.4.5.1.nupkg.sha512"
-    },
-    "System.Memory/4.5.4": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-1MbJTHS1lZ4bS4FmsJjnuGJOu88ZzTT2rLvrhW7Ygic+pC0NWA+3hgAen0HRdsocuQXCkUTdFn9yHJJhsijDXw==",
-      "path": "system.memory/4.5.4",
-      "hashPath": "system.memory.4.5.4.nupkg.sha512"
     },
     "System.Runtime.CompilerServices.Unsafe/6.0.0": {
       "type": "package",

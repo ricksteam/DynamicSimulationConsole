@@ -29,5 +29,6 @@ public class AmbushAvoidanceController : ControllerBase
     {
         if (!ModelState.IsValid) return BadRequest(ModelState);
         _logger.Log(LogLevel.Information, $"[POST]: GenerateScores");
+        return Ok();
     }
 }

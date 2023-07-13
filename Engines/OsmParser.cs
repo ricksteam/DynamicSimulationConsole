@@ -90,7 +90,7 @@ public class OsmParser
         {
             currentBridge.Name = value;
         }
-        else if (key == "nbi" && value == "yes")
+        else if (key == "nbi")
         {
             currentBridge.Nbi = value;
         }
@@ -127,5 +127,4 @@ public class OsmParser
     {
         return double.Parse(coordinate, CultureInfo.InvariantCulture);
     }
-
 }
