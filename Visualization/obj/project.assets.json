@@ -8,25 +8,28 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Cyber\\.nuget\\packages\\": {}
+    "C:\\Users\\brandon.lacy\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Graduate Research\\DynamicSimulationConsole\\Visualization\\Visualization.csproj",
+      "projectUniqueName": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Visualization\\Visualization.csproj",
       "projectName": "Visualization",
-      "projectPath": "D:\\Graduate Research\\DynamicSimulationConsole\\Visualization\\Visualization.csproj",
-      "packagesPath": "C:\\Users\\Cyber\\.nuget\\packages\\",
-      "outputPath": "D:\\Graduate Research\\DynamicSimulationConsole\\Visualization\\obj\\",
+      "projectPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Visualization\\Visualization.csproj",
+      "packagesPath": "C:\\Users\\brandon.lacy\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Visualization\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Cyber\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\brandon.lacy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "https://api.nuget.org/v3/index.json": {}
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.telerik.com/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
@@ -59,7 +62,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\Cyber\\.dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }
