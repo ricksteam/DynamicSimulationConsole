@@ -1,29 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Visualization\\Visualization.csproj": {}
+    "D:\\Graduate Research\\DynamicSimulationConsole\\Visualization\\Visualization.csproj": {}
   },
   "projects": {
-    "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Visualization\\Visualization.csproj": {
+    "D:\\Graduate Research\\DynamicSimulationConsole\\Visualization\\Visualization.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Visualization\\Visualization.csproj",
+        "projectUniqueName": "D:\\Graduate Research\\DynamicSimulationConsole\\Visualization\\Visualization.csproj",
         "projectName": "Visualization",
-        "projectPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Visualization\\Visualization.csproj",
-        "packagesPath": "C:\\Users\\brandon.lacy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Visualization\\obj\\",
+        "projectPath": "D:\\Graduate Research\\DynamicSimulationConsole\\Visualization\\Visualization.csproj",
+        "packagesPath": "C:\\Users\\Cyber\\.nuget\\packages\\",
+        "outputPath": "D:\\Graduate Research\\DynamicSimulationConsole\\Visualization\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\brandon.lacy\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Cyber\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.telerik.com/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
@@ -56,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\Cyber\\.dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
