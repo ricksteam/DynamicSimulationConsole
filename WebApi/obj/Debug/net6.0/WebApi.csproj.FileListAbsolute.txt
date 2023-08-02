@@ -116,8 +116,6 @@ C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug
 C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Engines.pdb
 C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\OsmSharp.dll
 C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\protobuf-net.dll
-C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\protobuf-net.Core.dll
-C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\System.Text.Json.dll
 C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\GeoCoordinate.NetCore.dll
 D:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\appsettings.Development.json
 D:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\appsettings.json
@@ -171,3 +169,20 @@ D:\Graduate Research\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\refint\Web
 D:\Graduate Research\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\WebApi.pdb
 D:\Graduate Research\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\WebApi.genruntimeconfig.cache
 D:\Graduate Research\DynamicSimulationConsole\WebApi\obj\Debug\net6.0\ref\WebApi.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\GeoAPI.CoordinateSystems.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\GeoAPI.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Itinero.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Itinero.Geo.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Itinero.IO.Osm.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Itinero.IO.Shape.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Itinero.Optimization.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\NetTopologySuite.CoordinateSystems.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\NetTopologySuite.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\NetTopologySuite.Features.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\NetTopologySuite.IO.GeoTools.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\NetTopologySuite.IO.ShapeFile.Extended.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\NetTopologySuite.IO.ShapeFile.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Reminiscence.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

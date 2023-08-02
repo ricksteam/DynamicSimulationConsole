@@ -16,3 +16,5 @@ Current update is combine all endpoints into 1 as we need all info:
 	Valhalla routes and trip polyline parsing
 	OSM/NBI bridge data from routes
 	Ambush avoidance scoring
+
+https://github.com/itinero/routing/blob/develop/src/Itinero/Osm/Vehicles/bigtruck.lua

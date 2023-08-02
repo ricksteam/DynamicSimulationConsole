@@ -2,6 +2,7 @@ using System.Text.Json.Serialization;
 using System.Xml.Linq;
 using DynamicSimulationConsole.DataAccessLayer.Repositories;
 using Engines;
+using Engines.Interface;
 using Shared.Models;
 
 
@@ -13,13 +14,13 @@ builder.Services.AddControllers().AddJsonOptions((options) => options.JsonSerial
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var nodes = OsmParser.ExtractNodesAndBridges(Directory.GetCurrentDirectory() + "\\..\\OSM\\NE-Merge-v1-1.osm",
-    out var bridges);
-var osmData = new OsmData
-{
-    Nodes = nodes,
-    Bridges = bridges
-};
+// var nodes = OsmParser.ExtractNodesAndBridges(Directory.GetCurrentDirectory() + "\\..\\OSM\\NE-Merge-v1-1.osm",
+//     out var bridges);
+// var osmData = new OsmData
+// {
+//     Nodes = nodes,
+//     Bridges = bridges
+// };
 
 // var bridges = PbiParser.GetBridges(Directory.GetCurrentDirectory() + "\\..\\OSM\\NE-merge-v1-1-1.pbf");
 // var osmData = new OsmData()
@@ -28,11 +29,15 @@ var osmData = new OsmData
 //     Bridges = bridges
 // };
 
-builder.Services.AddSingleton<OsmData>(osmData);
+//builder.Services.AddSingleton<OsmData>(osmData);
 builder.Services.AddSingleton<IConvoyRepository, MongoConvoyRepository>();
 builder.Services.AddSingleton<IRouteRepository, MongoRouteRepository>();
-
+var simEngine = new SimulationEngine();
+builder.Services.AddSingleton<ISimulationEngine>(simEngine);
 builder.Services.AddCors();
+
+builder.Services.AddControllers().AddNewtonsoftJson(options =>
+    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
 var app = builder.Build();
 
