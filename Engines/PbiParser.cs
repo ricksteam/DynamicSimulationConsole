@@ -1,6 +1,7 @@
 ﻿using OsmSharp;
 using OsmSharp.Streams;
 using Shared.Models;
+using Node = OsmSharp.Node;
 
 namespace Engines;
 
@@ -25,4 +26,45 @@ public class PbiParser
 
         return bridgeList;
     }
+
+    public static (Dictionary<long?, Node>, List<Edge>) LoadDataFromPBF(string filePath)
+    {
+        var nodes = new Dictionary<long?, Node>();
+        var edges = new List<Edge>();
+
+        using (var fileStream = new System.IO.FileStream(filePath, System.IO.FileMode.Open))
+        {
+            var source = new PBFOsmStreamSource(fileStream);
+
+            foreach (var element in source)
+            {
+                switch (element.Type)
+                {
+                    case OsmGeoType.Node:
+                    {
+                        if (element is Node { Id: { } } node) nodes[node.Id] = node;
+                        break;
+                    }
+                    case OsmGeoType.Way:
+                    {
+                        var way = element as Way;
+                        for (int i = 0; i < way.Nodes.Length - 1; i++)
+                        {
+                            edges.Add(new Edge
+                            {
+                                StartNodeId = way.Nodes[i],
+                                EndNodeId = way.Nodes[i + 1],
+                                Weight = 1 // Example weight
+                            });
+                        }
+
+                        break;
+                    }
+                }
+            }
+        }
+
+        return (nodes, edges);
+    }
+
 }

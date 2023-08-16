@@ -6,6 +6,8 @@ public class OsmData
     public List<OsmBridge> Bridges { get; set; }
 }
 
+
+
 public class OsmNode
 {
     public long Id { get; set; }

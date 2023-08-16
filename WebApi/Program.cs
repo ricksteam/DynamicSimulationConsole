@@ -22,17 +22,17 @@ builder.Services.AddSwaggerGen();
 //     Bridges = bridges
 // };
 
-// var bridges = PbiParser.GetBridges(Directory.GetCurrentDirectory() + "\\..\\OSM\\NE-merge-v1-1-1.pbf");
-// var osmData = new OsmData()
-// {
-//     Nodes = new List<OsmNode>(),
-//     Bridges = bridges
-// };
+var (nodes, edges) = PbiParser.LoadDataFromPBF(Directory.GetCurrentDirectory() + "\\..\\OSM\\NE-merge-v1-1-1.pbf");
+var osmData = new PbiData()
+{
+    Nodes = nodes,
+    Edges = edges
+};
 
-//builder.Services.AddSingleton<OsmData>(osmData);
+builder.Services.AddSingleton<PbiData>(osmData);
 builder.Services.AddSingleton<IConvoyRepository, MongoConvoyRepository>();
 builder.Services.AddSingleton<IRouteRepository, MongoRouteRepository>();
-var simEngine = new SimulationEngine();
+var simEngine = new SimulationEngine(osmData);
 builder.Services.AddSingleton<ISimulationEngine>(simEngine);
 builder.Services.AddCors();
 

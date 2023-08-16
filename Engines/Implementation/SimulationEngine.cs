@@ -1,68 +1,141 @@
 ﻿using DynamicSimulationConsole.Engines.Models;
 using Engines.Interface;
-using Engines.Profiles;
-using Itinero;
-using Itinero.Algorithms.Networks.Analytics.Trees;
-using Itinero.Data.Network;
-using Itinero.Geo;
-using Itinero.IO.Osm;
-using Itinero.LocalGeo;
-using Itinero.Optimization;
-using Itinero.Profiles;
+using OsmSharp.Routing;
 using Shared.Models;
-using Vehicle = Itinero.Osm.Vehicles.Vehicle;
+
 
 namespace Engines;
 
+public class PbiData
+{
+    public Dictionary<long?, OsmSharp.Node> Nodes { get; set; }
+    public List<Edge> Edges { get; set; }
+}
+
 public class SimulationEngine : ISimulationEngine
 {
-    private readonly RouterDb _routerDb;
-    private readonly Router _router;
-
-    public SimulationEngine()
-    {
-        var profileLuaFile = Directory.GetCurrentDirectory() + "\\..\\Engines\\Profiles\\convoy.lua";
-        var profileCsFile = Directory.GetCurrentDirectory() + "\\..\\Engines\\Profiles\\ConvoyProfile.cs";
-        using var profileStream = File.OpenRead(profileLuaFile);
-        //var teee = new ConvoyProfile();
-        var convoyProfile = DynamicVehicle.LoadFromStream(profileStream);
-        
-        _routerDb = new RouterDb();
-        
-        var file = Directory.GetCurrentDirectory() + "\\..\\OSM\\NE-merge-v1-2.pbf";
-        using var fileStream = System.IO.File.OpenRead(file);
-        _routerDb.LoadOsmData(fileStream, convoyProfile);
-        _router = new Router(_routerDb);
-        Console.WriteLine("LOADING COMPLETE");
-    }
+    private PbiData _osmData;
     
+    public Dictionary<(long, long), double> edgePenalties = new Dictionary<(long, long), double>();
+    
+    public SimulationEngine(PbiData data)
+    {
+        _osmData = data;
+    }
     public RouteResult[] Test(LatLng startPoint, LatLng endPoint)
     {
-        var profile = _routerDb.GetSupportedVehicle("convoy");
-        var fastestRoute = GetRoute(profile.Fastest(), startPoint, endPoint);
-        var shortestRoute = GetRoute(profile.Shortest(), startPoint, endPoint);
-        foreach (var t in fastestRoute.Branches)
+        var res = GenerateMultipleRoutes(_osmData.Nodes, _osmData.Edges, 492045288, 2386601331, 5, 1);
+        return null;
+    }
+    
+    public List<List<long>> GenerateMultipleRoutes(Dictionary<long?, OsmSharp.Node> nodes, List<Edge> edges, long startNodeId, long endNodeId, int numberOfRoutes, double penaltyAmount)
+    {
+        var routes = new List<List<long>>();
+
+        for (int i = 0; i < numberOfRoutes; i++)
         {
-            var found = t.Attributes.Where(x => x.Key == "bridge");
-            foreach (var b in found)
+            var route = Dijkstra(nodes, edges, startNodeId, endNodeId);
+            if (route != null)
             {
-                Console.Write(b.ToString() + " | ");
+                routes.Add(route);
+                ApplyPenaltyToPath(route, penaltyAmount);
             }
-            Console.WriteLine();
         }
-        return new RouteResult[]
-        {
-            new RouteResult(fastestRoute.Shape),
-            new RouteResult(shortestRoute.Shape)
-        };
+        return routes;
     }
 
-    private Route GetRoute(Profile profile, LatLng startPoint, LatLng endPoint)
+    public void ApplyPenaltyToPath(List<long> path, double penaltyAmount)
     {
-        var start = _router.Resolve(profile, (float)startPoint.lat, (float)startPoint.lon);
-        var end = _router.Resolve(profile, (float)endPoint.lat, (float)endPoint.lon);
-        
-        var route = _router.Calculate(profile, start, end);
-        return route;
+        for (int i = 0; i < path.Count - 1; i++)
+        {
+            var edge = (path[i], path[i + 1]);
+            if (edgePenalties.ContainsKey(edge))
+            {
+                edgePenalties[edge] += penaltyAmount;
+            }
+            else
+            {
+                edgePenalties[edge] = penaltyAmount;
+            }
+        }
+    }
+    
+    public List<long> Dijkstra(Dictionary<long?, OsmSharp.Node> nodes, List<Edge> edges, long startNodeId, long endNodeId)
+    {
+        var distances = new Dictionary<long, double>();
+        var previousNodes = new Dictionary<long, long>();
+        var unvisited = new HashSet<long>();
+
+        foreach (var node in nodes)
+        {
+            if (!node.Key.HasValue) continue;
+            
+            distances[node.Key.Value] = double.PositiveInfinity;
+            unvisited.Add(node.Key.Value);
+        }
+
+        distances[startNodeId] = 0;
+
+        while (unvisited.Count > 0)
+        {
+            var currentNode = GetNodeWithSmallestDistance(unvisited, distances);
+            unvisited.Remove(currentNode);
+
+            if (currentNode == endNodeId)
+            {
+                return BuildPath(previousNodes, endNodeId);
+            }
+
+            var neighborEdges = edges.FindAll(e => e.StartNodeId == currentNode);
+            foreach (var edge in neighborEdges)
+            {
+                var neighbor = edge.EndNodeId;
+                if (unvisited.Contains(neighbor))
+                {
+                    var edgePenalty = edgePenalties.GetValueOrDefault<(long, long), double>((edge.StartNodeId, edge.EndNodeId), 0);
+                    var newDist = distances[currentNode] + edge.Weight + edgePenalty;
+
+                    if (newDist < distances[neighbor])
+                    {
+                        distances[neighbor] = newDist;
+                        previousNodes[neighbor] = currentNode;
+                    }
+                }
+            }
+        }
+
+        return null; // Path not found
+    }
+
+    private long GetNodeWithSmallestDistance(HashSet<long> unvisited, Dictionary<long, double> distances)
+    {
+        double smallestDistance = double.PositiveInfinity;
+        long nodeIdWithSmallestDistance = 0;
+
+        foreach (var nodeId in unvisited)
+        {
+            if (distances[nodeId] < smallestDistance)
+            {
+                smallestDistance = distances[nodeId];
+                nodeIdWithSmallestDistance = nodeId;
+            }
+        }
+
+        return nodeIdWithSmallestDistance;
+    }
+
+    private List<long> BuildPath(Dictionary<long, long> previousNodes, long endNodeId)
+    {
+        var path = new List<long>();
+        var currentNodeId = endNodeId;
+
+        while (previousNodes.ContainsKey(currentNodeId))
+        {
+            path.Insert(0, currentNodeId);
+            currentNodeId = previousNodes[currentNodeId];
+        }
+
+        path.Insert(0, currentNodeId);
+        return path;
     }
 }
