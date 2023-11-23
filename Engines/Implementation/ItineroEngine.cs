@@ -1,18 +1,11 @@
 ﻿using DynamicSimulationConsole.Engines.Models;
 using Engines.Interface;
-using Engines.Profiles;
 using Itinero;
-using Itinero.Algorithms.Networks.Analytics.Trees;
-using Itinero.Data.Network;
-using Itinero.Geo;
 using Itinero.IO.Osm;
-using Itinero.LocalGeo;
-using Itinero.Optimization;
 using Itinero.Profiles;
 using Shared.Models;
-using Vehicle = Itinero.Osm.Vehicles.Vehicle;
 
-namespace Engines;
+namespace Engines.Implementation;
 
 public class ItineroEngine : ISimulationEngine
 {
@@ -36,7 +29,7 @@ public class ItineroEngine : ISimulationEngine
         Console.WriteLine("LOADING COMPLETE");
     }
     
-    public RouteResult[] Test(LatLng startPoint, LatLng endPoint)
+    public RouteResult[] Test(LatLng startPoint, LatLng endPoint, int numberOfRoutes)
     {
         var profile = _routerDb.GetSupportedVehicle("convoy");
         var fastestRoute = GetRoute(profile.Fastest(), startPoint, endPoint);
@@ -52,8 +45,8 @@ public class ItineroEngine : ISimulationEngine
         }
         return new RouteResult[]
         {
-            new RouteResult(fastestRoute.Shape),
-            new RouteResult(shortestRoute.Shape)
+            //new RouteResult(fastestRoute.Shape),
+            //new RouteResult(shortestRoute.Shape)
         };
     }
 

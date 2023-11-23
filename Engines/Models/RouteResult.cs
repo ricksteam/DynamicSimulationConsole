@@ -1,14 +1,13 @@
-﻿using Itinero.LocalGeo;
-using Shared.Models;
+﻿using Shared.Models;
 
 namespace DynamicSimulationConsole.Engines.Models;
 public class RouteResult
 {
-    public Coordinate[] Coordinates;
+    public Node[] Nodes;
     public OsmBridge[] Bridges;
 
-    public RouteResult(Coordinate[] coordinates)
+    public RouteResult(Node[] nodes)
     {
-        Coordinates = coordinates;
+        Nodes = nodes;
     }
 }

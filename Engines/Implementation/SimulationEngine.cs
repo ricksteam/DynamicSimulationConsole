@@ -1,141 +1,43 @@
-﻿using DynamicSimulationConsole.Engines.Models;
+﻿using System.Diagnostics;
+using DynamicSimulationConsole.Engines.Models;
 using Engines.Interface;
-using OsmSharp.Routing;
+using Newtonsoft.Json.Linq;
 using Shared.Models;
 
-
-namespace Engines;
-
-public class PbiData
-{
-    public Dictionary<long?, OsmSharp.Node> Nodes { get; set; }
-    public List<Edge> Edges { get; set; }
-}
+namespace Engines.Implementation;
 
 public class SimulationEngine : ISimulationEngine
 {
-    private PbiData _osmData;
-    
-    public Dictionary<(long, long), double> edgePenalties = new Dictionary<(long, long), double>();
-    
-    public SimulationEngine(PbiData data)
+    private static void ExecutePythonScript(LatLng startPoint, LatLng endPoint, int numberOfRoutes)
     {
-        _osmData = data;
-    }
-    public RouteResult[] Test(LatLng startPoint, LatLng endPoint)
-    {
-        var res = GenerateMultipleRoutes(_osmData.Nodes, _osmData.Edges, 492045288, 2386601331, 5, 1);
-        return null;
-    }
-    
-    public List<List<long>> GenerateMultipleRoutes(Dictionary<long?, OsmSharp.Node> nodes, List<Edge> edges, long startNodeId, long endNodeId, int numberOfRoutes, double penaltyAmount)
-    {
-        var routes = new List<List<long>>();
+        const string pythonPath = @"C:\Users\Cyber\miniconda3\envs\ox\python.exe";
+        const string scriptPath = @"D:\Graduate Research\DynamicSimulationEngine\main.py";
 
-        for (int i = 0; i < numberOfRoutes; i++)
+        var arg1 = startPoint.lat;
+        var arg2 = startPoint.lon;
+        var arg3 = endPoint.lat;
+        var arg4 = startPoint.lon; 
+ 
+        var start = new ProcessStartInfo
         {
-            var route = Dijkstra(nodes, edges, startNodeId, endNodeId);
-            if (route != null)
-            {
-                routes.Add(route);
-                ApplyPenaltyToPath(route, penaltyAmount);
-            }
-        }
-        return routes;
-    }
-
-    public void ApplyPenaltyToPath(List<long> path, double penaltyAmount)
-    {
-        for (int i = 0; i < path.Count - 1; i++)
-        {
-            var edge = (path[i], path[i + 1]);
-            if (edgePenalties.ContainsKey(edge))
-            {
-                edgePenalties[edge] += penaltyAmount;
-            }
-            else
-            {
-                edgePenalties[edge] = penaltyAmount;
-            }
-        }
+            FileName = pythonPath,
+            Arguments = $"{scriptPath} {arg1} {arg2} {arg3} {arg4} {numberOfRoutes}",
+            UseShellExecute = false,
+            RedirectStandardOutput = true,
+            CreateNoWindow = false
+        };
+        
+        using var process = Process.Start(start);
+        using var reader = process.StandardOutput;
+        
+        var result = reader.ReadToEnd();
+        //var jsonResult = JObject.Parse(result);
+        Console.WriteLine(result);
     }
     
-    public List<long> Dijkstra(Dictionary<long?, OsmSharp.Node> nodes, List<Edge> edges, long startNodeId, long endNodeId)
+    public RouteResult[] Test(LatLng startPoint, LatLng endPoint, int numberOfRoutes)
     {
-        var distances = new Dictionary<long, double>();
-        var previousNodes = new Dictionary<long, long>();
-        var unvisited = new HashSet<long>();
-
-        foreach (var node in nodes)
-        {
-            if (!node.Key.HasValue) continue;
-            
-            distances[node.Key.Value] = double.PositiveInfinity;
-            unvisited.Add(node.Key.Value);
-        }
-
-        distances[startNodeId] = 0;
-
-        while (unvisited.Count > 0)
-        {
-            var currentNode = GetNodeWithSmallestDistance(unvisited, distances);
-            unvisited.Remove(currentNode);
-
-            if (currentNode == endNodeId)
-            {
-                return BuildPath(previousNodes, endNodeId);
-            }
-
-            var neighborEdges = edges.FindAll(e => e.StartNodeId == currentNode);
-            foreach (var edge in neighborEdges)
-            {
-                var neighbor = edge.EndNodeId;
-                if (unvisited.Contains(neighbor))
-                {
-                    var edgePenalty = edgePenalties.GetValueOrDefault<(long, long), double>((edge.StartNodeId, edge.EndNodeId), 0);
-                    var newDist = distances[currentNode] + edge.Weight + edgePenalty;
-
-                    if (newDist < distances[neighbor])
-                    {
-                        distances[neighbor] = newDist;
-                        previousNodes[neighbor] = currentNode;
-                    }
-                }
-            }
-        }
-
-        return null; // Path not found
-    }
-
-    private long GetNodeWithSmallestDistance(HashSet<long> unvisited, Dictionary<long, double> distances)
-    {
-        double smallestDistance = double.PositiveInfinity;
-        long nodeIdWithSmallestDistance = 0;
-
-        foreach (var nodeId in unvisited)
-        {
-            if (distances[nodeId] < smallestDistance)
-            {
-                smallestDistance = distances[nodeId];
-                nodeIdWithSmallestDistance = nodeId;
-            }
-        }
-
-        return nodeIdWithSmallestDistance;
-    }
-
-    private List<long> BuildPath(Dictionary<long, long> previousNodes, long endNodeId)
-    {
-        var path = new List<long>();
-        var currentNodeId = endNodeId;
-
-        while (previousNodes.ContainsKey(currentNodeId))
-        {
-            path.Insert(0, currentNodeId);
-            currentNodeId = previousNodes[currentNodeId];
-        }
-
-        path.Insert(0, currentNodeId);
-        return path;
+        ExecutePythonScript(startPoint, endPoint, 1);
+        return Array.Empty<RouteResult>();
     }
 }

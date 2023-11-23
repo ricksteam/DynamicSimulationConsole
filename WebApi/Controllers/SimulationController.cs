@@ -20,7 +20,7 @@ public class SimulationController : ControllerBase
     private readonly ISimulationEngine _simulationEngine;
 
     public SimulationController(ILogger<SimulationController> logger, ISimulationEngine simulationEngine)
-    {
+    { 
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         _simulationEngine = simulationEngine ?? throw new ArgumentNullException(nameof(simulationEngine));
     }
@@ -30,8 +30,20 @@ public class SimulationController : ControllerBase
     {
         if (!ModelState.IsValid) return BadRequest(ModelState);
         _logger.Log(LogLevel.Information, $"[POST]: RunSimulation");
-        var route = _simulationEngine.Test(input.StartLocation, input.EndLocation);
+
+        // input.StartLocation = new LatLng()
+        // {
+        //     lat = 41.332119,
+        //     lon = -96.0333786
+        // };
+        //
+        // input.EndLocation = new LatLng()
+        // {
+        //     lat = 41.32913110042719,
+        //     lon = -96.03558199999999
+        // };
+        var route = _simulationEngine.Test(input.StartLocation, input.EndLocation , input.NumberOfRoutes);
         return Ok(route);
     }
     
-}
+} 

@@ -7,5 +7,5 @@ namespace Engines.Interface;
 
 public interface ISimulationEngine
 {
-    public RouteResult[] Test(LatLng startPoint, LatLng endPoint);
+    public RouteResult[] Test(LatLng startPoint, LatLng endPoint, int numberOfRoutes);
 }

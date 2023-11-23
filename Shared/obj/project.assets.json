@@ -55,28 +55,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\brandon.lacy\\.nuget\\packages\\": {}
+    "C:\\Users\\Cyber\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Shared\\Shared.csproj",
+      "projectUniqueName": "D:\\Graduate Research\\DynamicSimulationConsole\\Shared\\Shared.csproj",
       "projectName": "Shared",
-      "projectPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Shared\\Shared.csproj",
-      "packagesPath": "C:\\Users\\brandon.lacy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\brandon.lacy\\Documents\\GitHub\\DynamicSimulationConsole\\Shared\\obj\\",
+      "projectPath": "D:\\Graduate Research\\DynamicSimulationConsole\\Shared\\Shared.csproj",
+      "packagesPath": "C:\\Users\\Cyber\\.nuget\\packages\\",
+      "outputPath": "D:\\Graduate Research\\DynamicSimulationConsole\\Shared\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\brandon.lacy\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Cyber\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://nuget.telerik.com/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
@@ -115,7 +112,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\Cyber\\.dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

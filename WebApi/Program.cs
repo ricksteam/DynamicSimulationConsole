@@ -2,6 +2,7 @@ using System.Text.Json.Serialization;
 using System.Xml.Linq;
 using DynamicSimulationConsole.DataAccessLayer.Repositories;
 using Engines;
+using Engines.Implementation;
 using Engines.Interface;
 using Shared.Models;
 
@@ -32,8 +33,7 @@ var osmData = new PbiData()
 builder.Services.AddSingleton<PbiData>(osmData);
 builder.Services.AddSingleton<IConvoyRepository, MongoConvoyRepository>();
 builder.Services.AddSingleton<IRouteRepository, MongoRouteRepository>();
-var simEngine = new SimulationEngine(osmData);
-builder.Services.AddSingleton<ISimulationEngine>(simEngine);
+builder.Services.AddSingleton<ISimulationEngine, ScoringEngine>();
 builder.Services.AddCors();
 
 builder.Services.AddControllers().AddNewtonsoftJson(options =>

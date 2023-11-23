@@ -134,13 +134,11 @@ D:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\MongoDB.Li
 D:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Newtonsoft.Json.dll
 D:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\OsmSharp.dll
 D:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\protobuf-net.dll
-D:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\protobuf-net.Core.dll
 D:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\SharpCompress.dll
 D:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Snappier.dll
 D:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-D:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\System.Text.Json.dll
 D:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\ZstdSharp.dll
 D:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\runtimes\linux\native\libmongocrypt.so
 D:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\runtimes\osx\native\libmongocrypt.dylib
@@ -186,3 +184,21 @@ C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug
 C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\brandon.lacy\Documents\GitHub\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+D:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\GeoAPI.CoordinateSystems.dll
+D:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\GeoAPI.dll
+D:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Itinero.dll
+D:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Itinero.Geo.dll
+D:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Itinero.IO.Osm.dll
+D:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Itinero.IO.Shape.dll
+D:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Itinero.Optimization.dll
+D:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\NetTopologySuite.CoordinateSystems.dll
+D:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\NetTopologySuite.dll
+D:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\NetTopologySuite.Features.dll
+D:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\NetTopologySuite.IO.GeoTools.dll
+D:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\NetTopologySuite.IO.ShapeFile.Extended.dll
+D:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\NetTopologySuite.IO.ShapeFile.dll
+D:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+D:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Reminiscence.dll
+D:\Graduate Research\DynamicSimulationConsole\WebApi\bin\Debug\net6.0\Npgsql.dll
