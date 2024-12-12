@@ -1,81 +1,49 @@
-using DynamicSimulationConsole.RoadGraph;
-using DynamicSimulationConsole.RoadGraph.Repositories;
-using DynamicSimulationConsole.Shared.Models;
+﻿using System.Net;
+using DynamicSimulationConsole.DataAccessLayer.Repositories;
+using DynamicSimulationConsole.DataAccessLayer.Models;
+using DynamicSimulationConsole.Services;
+using DynamicSimulationConsole.Services.Models;
 using DynamicSimulationConsole.WebApi.Models;
+using Engines;
+using Engines.Interface;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using Shared.Models;
 
-namespace DynamicSimulationConsole.WebApi
+namespace DynamicSimulationConsole.WebApi;
+
+[ApiController]
+[Route("[controller]")]
+public class SimulationController : ControllerBase
 {
-    [ApiController]
-    [Route("[controller]")]
-    public class SimulationController : ControllerBase
-    {
-        private readonly ILogger<SimulationController> _logger;
-        private readonly IRoadGraphRepository _graphRepository;
-        private readonly IConvoyRepository _convoyRepository;
-        
-        public SimulationController(ILogger<SimulationController> logger, IRoadGraphRepository graphRepository, IConvoyRepository convoyRepository)
-        {
-            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-            _graphRepository = graphRepository ?? throw new ArgumentNullException(nameof(graphRepository));
-            _convoyRepository = convoyRepository ?? throw new ArgumentNullException(nameof(convoyRepository));
-        }
+    private readonly ILogger<SimulationController> _logger;
+    private readonly ISimulationEngine _simulationEngine;
 
-        
-        [HttpPost("StartSimulation")]
-        public IActionResult StartSimulation([FromBody] SimulationInput input)
-        {
-            if (!ModelState.IsValid) return BadRequest(ModelState);
-            
-            _logger.Log(LogLevel.Information, $"[POST]: Simulation/StartSimulation");
-            var newGraph = new Graph(input.nodes, input.connections);
-            var guid = _graphRepository.AddGraph(newGraph);
-            return Ok(guid);
-        }
-        
-        [HttpDelete("StopSimulation")]
-        public IActionResult StopSimulation([FromBody] Guid id)
-        {
-            if (!ModelState.IsValid) return BadRequest(ModelState);
-            
-            _logger.Log(LogLevel.Information, $"[DELETE]: Simulation/StopSimulation");
-            var deleted = _graphRepository.TryDeleteGraphById(id);
-            return Ok(deleted);
-        }
-
-        [HttpGet("ShortestPath")]
-        public IActionResult GetShortestPath([FromQuery] Guid routeId, [FromQuery] Guid convoyId, [FromQuery] int startNodeId, [FromQuery] int endNodeId)
-        {
-            _logger.Log(LogLevel.Information, $"[GET]: Simulation/ShortestPath");
-            if (!_graphRepository.TryGetGraphById(routeId, out var graph)) return NotFound("ID not found in graph repository");
-            if (!_convoyRepository.TryGetConvoyById(convoyId, out var convoy)) return NotFound("ID not found in convoy repository");
-                
-            var resultDict = new Dictionary<int, List<int>>();
-            // var threads = new Task[convoy.vehicles.Count];
-            // for (var i = 0; i < convoy.vehicles.Count; i++)
-            // {
-            //     var vehicle = convoy.vehicles[i];
-            //     threads[i] = Task.Factory.StartNew(() =>
-            //     {
-            //         var resultPath = ConvoyVehicleThread(vehicle, convoy, graph);
-            //         resultDict.Add(vehicle.VehicleId, resultPath?.Select(rp => rp.nodeId).ToList() ?? new List<int>());
-            //     });
-            // }
-            //
-            // Task.WaitAll(threads);
-            
-            foreach (var vehicle in convoy.vehicles)
-            {
-                var resultPath = ConvoyVehicleThread(vehicle, convoy, graph, startNodeId, endNodeId);
-                resultDict.Add(vehicle.VehicleId, resultPath?.Select(rp => rp.nodeId).ToList() ?? new List<int>());
-            }
-
-            return Ok(resultDict);
-        }
-
-        private List<PathNode> ConvoyVehicleThread(ConvoyVehicle vehicle, Convoy convoy, Graph graph, int startNodeId, int endNodeId)
-        {
-            return graph.GetShortestPath(startNodeId, endNodeId, vehicle);    
-        }
+    public SimulationController(ILogger<SimulationController> logger, ISimulationEngine simulationEngine)
+    { 
+        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+        _simulationEngine = simulationEngine ?? throw new ArgumentNullException(nameof(simulationEngine));
     }
-}
+
+    [HttpPost("RunSimulation")]
+    public async Task<IActionResult> RunSimulation([FromBody] SimulationParameters input)
+    {
+        if (!ModelState.IsValid) return BadRequest(ModelState);
+        _logger.Log(LogLevel.Information, $"[POST]: RunSimulation");
+
+        // input.StartLocation = new LatLng()
+        // {
+        //     lat = 41.332119,
+        //     lon = -96.0333786
+        // };
+        //
+        // input.EndLocation = new LatLng()
+        // {
+        //     lat = 41.32913110042719,
+        //     lon = -96.03558199999999
+        // };
+        var route = _simulationEngine.Test(input.StartLocation, input.EndLocation , input.NumberOfRoutes);
+        return Ok(route);
+    }
+    
+} 
